@@ -13,48 +13,61 @@ body{
     justify-content:center;
     align-items:center;
     min-height:100vh;
+    margin:0;
 }
 
 .box{
     background:white;
-    padding:40px;
     width:450px;
+    padding:40px;
     border-radius:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 input{
     width:100%;
-    padding:12px;
+    padding:14px;
     margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:8px;
+    border:1px solid #ddd;
+    border-radius:10px;
     box-sizing:border-box;
 }
 
 button{
     width:100%;
-    padding:12px;
-    background:#9e2f2f;
+    padding:15px;
+    background:#8e2f2b;
     color:white;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
+    font-size:18px;
+}
+
+h1{
+    color:#1d3557;
 }
 </style>
 </head>
-
 <body>
 
 <div class="box">
+
     <h1>Registrierung</h1>
 
     <input type="text" placeholder="Vorname">
+
     <input type="text" placeholder="Nachname">
-    <input type="email" placeholder="E-Mail">
+
+    <input type="email" placeholder="E-Mail-Adresse">
+
     <input type="tel" placeholder="Handynummer">
+
     <input type="password" placeholder="Passwort">
+
     <input type="password" placeholder="Passwort wiederholen">
 
     <button>Registrieren</button>
+
 </div>
 
 </body>
