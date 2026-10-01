@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuhrunternehmer - Materialversandanzeige</title>
 
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#8e2f2b;
+    color:white;
+    padding:15px 30px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:30px;
+}
+
+.form-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+table{
+    width:100%;
+    margin-top:25px;
+    border-collapse:collapse;
+}
+
+th{
+    background:#8e2f2b;
+    color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ccc;
+    padding:5px;
+}
+
+td input{
+    border:none;
+}
+
+.signature{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.sig-box{
+    border:1px solid #ccc;
+    padding:15px;
+    min-height:120px;
+    border-radius:8px;
+}
+
+.button-group{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.btn{
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    color:white;
+}
+
+.speichern-btn{
+    background:#8e2f2b;
+}
+
+.speichern-btn:hover{
+    background:#742522;
+}
+
+.druck-btn{
+    background:#444;
+}
+
+.druck-btn:hover{
+    background:#222;
+}
+
+.pdf-btn{
+    background:#1f4e79;
+}
+
+.pdf-btn:hover{
+    background:#173754;
+}
+
+.back-btn{
+    background:#666;
+}
+
+.back-btn:hover{
+    background:#444;
+}
+
+@media(max-width:900px){
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .signature{
+        grid-template-columns:1fr;
+    }
+}
+
+@media print{
+
+    header,
+    .button-group{
+        display:none;
+    }
+
+    body{
+        background:white;
+    }
+
+    .form-card{
+        box-shadow:none;
+        border:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>👤 Empfänger</h1>
+</header>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <div class="row">
+
+            <div>
+                <label>Name Abholer</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label>Baustelle</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div>
+                <label>Name Anforderer</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label>Empfänger</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div>
+                <label>Versand mit LKW Nr.</label>
+                <input type="text">
+            </div>
+
+            <div>
+                <label>Fremdfahrzeug</label>
+                <input type="text">
+            </div>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Bestell-Menge</th>
+                <th>Liefer-Menge</th>
+                <th>Einheit</th>
+                <th>Gegenstand</th>
+                <th>Neu / Gebraucht</th>
+                <th>Inventar-Nr.</th>
+            </tr>
+
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+
+        </table>
+
+        <div class="signature">
+
+            <div class="sig-box">
+                <b>Absender</b><br><br>
+                Für den richtigen Versand
+            </div>
+
+            <div class="sig-box">
+                <b>Fuhrunternehmer</b><br><br>
+                Für die richtige Übernahme
+            </div>
+
+            <div class="sig-box">
+                <b>Empfänger</b>
+            </div>
+
+            <div class="sig-box">
+                <b>Externe Abrechnung</b>
+            </div>
+
+        </div>
+
+        <div class="button-group">
+
+            <button class="btn speichern-btn">
+                💾 Speichern
+            </button>
+
+            <button class="btn druck-btn"
+                    onclick="window.print()">
+                🖨️ Drucken
+            </button>
+
+            <button class="btn pdf-btn"
+                    onclick="window.print()">
+                📄 Als PDF speichern
+            </button>
+
+            <button class="btn back-btn"
+                    onclick="window.location.href='materialversand.html'">
+                ← Zurück
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
