@@ -3,47 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leistungsnachweis</title>
+<title>Liefer-/Empfangsschein</title>
 
 <style>
-body{font-family:Arial;padding:20px;background:#f4f4f4;}
+body{
+    font-family:Arial;
+    padding:20px;
+    background:#f4f4f4;
+}
+
+.nav-buttons{
+    max-width:900px;
+    margin:auto;
+    margin-bottom:15px;
+    display:flex;
+    gap:10px;
+}
+
+.nav-btn{
+    padding:10px 20px;
+    background:#8e2f2b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.nav-btn:hover{
+    background:#742522;
+}
+
 form{
-background:white;
-padding:20px;
-max-width:900px;
-margin:auto;
-border-radius:15px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    max-width:900px;
+    margin:auto;
 }
 
-input,textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    box-sizing:border-box;
 }
 
-button{
-background:#8e2f2b;
-color:white;
-padding:10px 20px;
-border:none;
+button[type="submit"]{
+    padding:10px 20px;
+    background:#8e2f2b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 </style>
 </head>
 <body>
 
+<div class="nav-buttons">
+    <button class="nav-btn" onclick="window.location.href='zeiterfassung.html'">
+        ⏱ Zurück zur Zeiterfassung
+    </button>
+
+    <button class="nav-btn" onclick="window.location.href='dashboard.html'">
+        🏠 Zum Dashboard
+    </button>
+</div>
+
 <form>
+<h1>📦 Liefer-/Empfangsschein</h1>
 
-<h1>✅ Leistungsnachweis</h1>
+<input type="text" placeholder="Lieferant">
 
-<input type="text" placeholder="Mitarbeiter">
+<input type="text" placeholder="Empfänger">
 
 <input type="date">
 
-<input type="text" placeholder="Projekt">
+<input type="text" placeholder="Material">
 
-<textarea placeholder="Erbrachte Leistung"></textarea>
+<input type="number" placeholder="Menge">
 
-<input type="number" placeholder="Arbeitsstunden">
+<textarea placeholder="Bemerkung"></textarea>
 
 <button type="submit">
 Speichern
