@@ -3,21 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arbeitsnachweis</title>
+<title>Arbeitsnachweis - VE-Log</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial, sans-serif;
     background:#f4f4f4;
     padding:20px;
 }
 
 .container{
-    max-width:1000px;
+    max-width:1100px;
     margin:auto;
     background:white;
     padding:25px;
     border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
 .nav-buttons{
@@ -30,7 +37,7 @@ body{
     background:#8e2f2b;
     color:white;
     border:none;
-    padding:10px 20px;
+    padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
     font-weight:bold;
@@ -41,20 +48,49 @@ body{
 }
 
 h1{
+    margin-bottom:20px;
     color:#333;
 }
 
-.row{
+.grid-3{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:2fr 2fr 1fr;
     gap:15px;
     margin-bottom:15px;
 }
 
-input, select, textarea{
+.grid-4{
+    display:grid;
+    grid-template-columns:2fr 2fr 2fr 1fr;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+input,
+textarea,
+select{
     width:100%;
     padding:10px;
-    box-sizing:border-box;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#444;
+}
+
+.weekdays{
+    display:flex;
+    gap:10px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.weekdays label{
+    font-weight:normal;
 }
 
 table{
@@ -63,23 +99,20 @@ table{
     margin-top:20px;
 }
 
-table, th, td{
-    border:1px solid #ccc;
-}
-
 th{
     background:#8e2f2b;
     color:white;
     padding:10px;
+    border:1px solid #ddd;
 }
 
 td{
+    border:1px solid #ddd;
     padding:5px;
 }
 
 td input{
     border:none;
-    width:100%;
 }
 
 .save-btn{
@@ -90,6 +123,11 @@ td input{
     padding:12px 25px;
     border-radius:8px;
     cursor:pointer;
+    font-size:16px;
+}
+
+.save-btn:hover{
+    background:#742522;
 }
 </style>
 </head>
@@ -112,43 +150,105 @@ td input{
 
 <h1>📝 Arbeitsnachweis</h1>
 
-<div class="row">
-    <input type="text" placeholder="Name">
-    <input type="date">
+<div class="grid-3">
+    <div>
+        <label>Name</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Datum</label>
+        <input type="date">
+    </div>
+
+    <div>
+        <label>Std.</label>
+        <input type="number" step="0.25">
+    </div>
 </div>
 
-<div class="row">
-    <input type="text" placeholder="Firma">
-    <input type="text" placeholder="Baustelle">
+<div class="weekdays">
+    <label><input type="checkbox"> Mo</label>
+    <label><input type="checkbox"> Di</label>
+    <label><input type="checkbox"> Mi</label>
+    <label><input type="checkbox"> Do</label>
+    <label><input type="checkbox"> Fr</label>
+    <label><input type="checkbox"> Sa</label>
+    <label><input type="checkbox"> So</label>
+    <label><input type="checkbox"> Sonn-/Feiertag</label>
 </div>
 
-<div class="row">
-    <input type="time" placeholder="Arbeitsbeginn">
-    <input type="time" placeholder="Arbeitsende">
+<div class="grid-3">
+    <div>
+        <label>Abwesenheit von</label>
+        <input type="time">
+    </div>
+
+    <div>
+        <label>bis</label>
+        <input type="time">
+    </div>
+
+    <div>
+        <label>Std.</label>
+        <input type="number" step="0.25">
+    </div>
 </div>
 
-<div class="row">
-    <input type="number" placeholder="Pause (Minuten)">
-    <input type="number" placeholder="Kilometer">
+<div class="grid-4">
+    <div>
+        <label>Arbeitsbeginn</label>
+        <input type="time">
+    </div>
+
+    <div>
+        <label>Pause</label>
+        <input type="number">
+    </div>
+
+    <div>
+        <label>Arbeitsende</label>
+        <input type="time">
+    </div>
+
+    <div>
+        <label>Arb.-Std.</label>
+        <input type="number" step="0.25">
+    </div>
 </div>
 
-<div class="row">
-    <select>
-        <option>Wochentag wählen</option>
-        <option>Montag</option>
-        <option>Dienstag</option>
-        <option>Mittwoch</option>
-        <option>Donnerstag</option>
-        <option>Freitag</option>
-        <option>Samstag</option>
-        <option>Sonntag</option>
-    </select>
+<div class="grid-3">
+    <div>
+        <label>Firma</label>
+        <input type="text">
+    </div>
 
-    <select>
-        <option>Feiertag?</option>
-        <option>Nein</option>
-        <option>Ja</option>
-    </select>
+    <div>
+        <label>Kilometer</label>
+        <input type="number">
+    </div>
+
+    <div>
+        <label>Fahr.-Std.</label>
+        <input type="number" step="0.25">
+    </div>
+</div>
+
+<div class="grid-3">
+    <div>
+        <label>BV</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>K.-Stelle</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>ges.-Std.</label>
+        <input type="number" step="0.25">
+    </div>
 </div>
 
 <h3>Ausgeführte Arbeiten</h3>
@@ -156,8 +256,8 @@ td input{
 <table>
 <tr>
     <th>Uhrzeit von-bis</th>
-    <th>Ausgeführte Arbeiten</th>
-    <th>Stunden</th>
+    <th>Ausgeführte Arbeiten (Platz, Gerät, Material, Tätigkeit)</th>
+    <th>Arbeitsstunden</th>
 </tr>
 
 <tr>
@@ -190,17 +290,20 @@ td input{
     <td><input type="number"></td>
 </tr>
 
+<tr>
+    <td><input type="text"></td>
+    <td><input type="text"></td>
+    <td><input type="number"></td>
+</tr>
 </table>
-
-<textarea
-placeholder="Zusätzliche Bemerkungen"
-style="margin-top:20px;height:100px;">
-</textarea>
 
 <br>
 
+<label>Bemerkungen</label>
+<textarea rows="5"></textarea>
+
 <button class="save-btn">
-    💾 Arbeitsnachweis speichern
+💾 Arbeitsnachweis speichern
 </button>
 
 </div>
