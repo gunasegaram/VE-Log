@@ -34,7 +34,7 @@ header{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 .row{
@@ -46,8 +46,8 @@ header{
 
 label{
     display:block;
-    margin-bottom:5px;
     font-weight:bold;
+    margin-bottom:5px;
 }
 
 input{
@@ -61,21 +61,42 @@ table{
     width:100%;
     margin-top:25px;
     border-collapse:collapse;
+    table-layout:fixed;
 }
 
 th{
     background:#8e2f2b;
     color:white;
     padding:12px;
+    text-align:center;
 }
 
 td{
     border:1px solid #ccc;
-    padding:5px;
+    padding:4px;
+    vertical-align:top;
 }
 
-td input{
+.klein{
+    width:100%;
+    min-height:120px;
     border:none;
+    resize:none;
+    padding:8px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    background:transparent;
+}
+
+.gegenstand{
+    width:100%;
+    min-height:120px;
+    border:none;
+    resize:vertical;
+    padding:8px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    background:transparent;
 }
 
 .signature{
@@ -88,8 +109,17 @@ td input{
 .sig-box{
     border:1px solid #ccc;
     padding:15px;
-    min-height:120px;
+    min-height:220px;
     border-radius:8px;
+}
+
+.sig-input{
+    width:100%;
+    margin-top:5px;
+    margin-bottom:10px;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
 }
 
 .button-group{
@@ -104,40 +134,28 @@ td input{
     padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
-    font-weight:bold;
     color:white;
+    font-weight:bold;
 }
 
 .speichern-btn{
     background:#8e2f2b;
 }
 
-.speichern-btn:hover{
-    background:#742522;
-}
-
 .druck-btn{
     background:#444;
-}
-
-.druck-btn:hover{
-    background:#222;
 }
 
 .pdf-btn{
     background:#1f4e79;
 }
 
-.pdf-btn:hover{
-    background:#173754;
-}
-
 .back-btn{
     background:#666;
 }
 
-.back-btn:hover{
-    background:#444;
+.btn:hover{
+    opacity:0.9;
 }
 
 @media(max-width:900px){
@@ -149,6 +167,7 @@ td input{
     .signature{
         grid-template-columns:1fr;
     }
+
 }
 
 @media print{
@@ -164,8 +183,8 @@ td input{
 
     .form-card{
         box-shadow:none;
-        border:none;
     }
+
 }
 
 </style>
@@ -179,156 +198,241 @@ td input{
 
 <div class="container">
 
-    <div class="form-card">
+<div class="form-card">
 
-        <div class="row">
+<div class="row">
 
-            <div>
-                <label>Name Abholer</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Name Abholer</label>
+        <input type="text" id="nameAbholer">
+    </div>
 
-            <div>
-                <label>Baustelle</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Baustelle / Lager</label>
+        <input type="text" id="baustelle">
+    </div>
 
-        </div>
+</div>
 
-        <div class="row">
+<div class="row">
 
-            <div>
-                <label>Name Anforderer</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Name Anforderer</label>
+        <input type="text" id="nameAnforderer">
+    </div>
 
-            <div>
-                <label>Empfänger</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Empfänger</label>
+        <input type="text" id="empfaenger">
+    </div>
 
-        </div>
+</div>
 
-        <div class="row">
+<div class="row">
 
-            <div>
-                <label>Versand mit LKW Nr.</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Versand mit LKW Nr.</label>
+        <input type="text" id="lkw">
+    </div>
 
-            <div>
-                <label>Fremdfahrzeug</label>
-                <input type="text">
-            </div>
+    <div>
+        <label>Fremdfahrzeug</label>
+        <input type="text" id="fremdfahrzeug">
+    </div>
 
-        </div>
+</div>
 
-        <table>
+<table>
 
-            <tr>
-                <th>Bestell-Menge</th>
-                <th>Liefer-Menge</th>
-                <th>Einheit</th>
-                <th>Gegenstand</th>
-                <th>Neu / Gebraucht</th>
-                <th>Inventar-Nr.</th>
-            </tr>
+<tr>
+    <th style="width:8%">Bestell-Menge</th>
+    <th style="width:8%">Liefer-Menge</th>
+    <th style="width:8%">Einheit</th>
+    <th style="width:56%">Gegenstand</th>
+    <th style="width:10%">neu = n<br>gebr. = g</th>
+    <th style="width:10%">Invent.-Nr.</th>
+</tr>
 
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
+<tr>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="gegenstand"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+</tr>
 
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
+<tr>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="gegenstand"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+</tr>
 
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
+<tr>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="gegenstand"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+</tr>
 
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
+<tr>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="gegenstand"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+</tr>
 
-            <tr>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-                <td><input type="text"></td>
-            </tr>
+<tr>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="gegenstand"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+</tr>
 
-        </table>
+</table>
 
-        <div class="signature">
+<div class="signature">
 
-            <div class="sig-box">
-                <b>Absender</b><br><br>
-                Für den richtigen Versand
-            </div>
+    <div class="sig-box">
 
-            <div class="sig-box">
-                <b>Fuhrunternehmer</b><br><br>
-                Für die richtige Übernahme
-            </div>
+        <strong>Absender</strong><br>
+        für den richtigen Versand
 
-            <div class="sig-box">
-                <b>Empfänger</b>
-            </div>
+        <br><br>
 
-            <div class="sig-box">
-                <b>Externe Abrechnung</b>
-            </div>
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
 
-        </div>
+        <label>Tag</label>
+        <input type="date" class="sig-input">
 
-        <div class="button-group">
+        <label>Uhrzeit</label>
+        <input type="time" class="sig-input">
 
-            <button class="btn speichern-btn">
-                💾 Speichern
-            </button>
+    </div>
 
-            <button class="btn druck-btn"
-                    onclick="window.print()">
-                🖨️ Drucken
-            </button>
+    <div class="sig-box">
 
-            <button class="btn pdf-btn"
-                    onclick="window.print()">
-                📄 Als PDF speichern
-            </button>
+        <strong>Fuhrunternehmer</strong><br>
+        für die richtige Übernahme
 
-            <button class="btn back-btn"
-                    onclick="window.location.href='materialversand.html'">
-                ← Zurück
-            </button>
+        <br><br>
 
-        </div>
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
+
+    </div>
+
+    <div class="sig-box">
+
+        <strong>Empfänger</strong>
+
+        <br><br>
+
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
+
+        <label>Tag</label>
+        <input type="date" class="sig-input">
+
+    </div>
+
+    <div class="sig-box">
+
+        <strong>Externe Abrechnung</strong>
+
+        <br><br>
+
+        <label>Rz</label>
+        <input type="text" class="sig-input">
+
+        <label>Betr</label>
+        <input type="text" class="sig-input">
+
+        <label>Tarif</label>
+        <input type="text" class="sig-input">
 
     </div>
 
 </div>
+
+<div class="button-group">
+
+    <button class="btn speichern-btn"
+            onclick="speichernFormular()">
+        💾 Speichern
+    </button>
+
+    <button class="btn druck-btn"
+            onclick="window.print()">
+        🖨️ Drucken
+    </button>
+
+    <button class="btn pdf-btn"
+            onclick="window.print()">
+        📄 Als PDF speichern
+    </button>
+
+    <button class="btn back-btn"
+            onclick="window.location.href='materialversand.html'">
+        ← Zurück
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function speichernFormular(){
+
+    const daten = {
+        nameAbholer: document.getElementById("nameAbholer").value,
+        baustelle: document.getElementById("baustelle").value,
+        nameAnforderer: document.getElementById("nameAnforderer").value,
+        empfaenger: document.getElementById("empfaenger").value,
+        lkw: document.getElementById("lkw").value,
+        fremdfahrzeug: document.getElementById("fremdfahrzeug").value
+    };
+
+    localStorage.setItem(
+        "materialEmpfaenger",
+        JSON.stringify(daten)
+    );
+
+    alert("✅ Daten gespeichert");
+}
+
+function ladeFormular(){
+
+    const daten = JSON.parse(
+        localStorage.getItem("materialEmpfaenger")
+    );
+
+    if(!daten) return;
+
+    document.getElementById("nameAbholer").value = daten.nameAbholer || "";
+    document.getElementById("baustelle").value = daten.baustelle || "";
+    document.getElementById("nameAnforderer").value = daten.nameAnforderer || "";
+    document.getElementById("empfaenger").value = daten.empfaenger || "";
+    document.getElementById("lkw").value = daten.lkw || "";
+    document.getElementById("fremdfahrzeug").value = daten.fremdfahrzeug || "";
+}
+
+window.onload = ladeFormular;
+
+</script>
 
 </body>
 </html>
