@@ -7,17 +7,19 @@
 
 <style>
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f4f4f4;
     padding:20px;
+    margin:0;
 }
 
 .container{
     max-width:1200px;
     margin:auto;
-    background:white;
-    padding:20px;
+    background:#fff;
+    padding:25px;
     border-radius:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .nav-buttons{
@@ -28,9 +30,9 @@ body{
 
 .nav-btn{
     background:#8e2f2b;
-    color:white;
+    color:#fff;
     border:none;
-    padding:10px 20px;
+    padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
     font-weight:bold;
@@ -41,7 +43,8 @@ body{
 }
 
 h1{
-    margin-bottom:20px;
+    color:#233247;
+    margin-bottom:25px;
 }
 
 .row{
@@ -51,29 +54,45 @@ h1{
 }
 
 .row-3{
-    grid-template-columns:2fr 2fr 1fr;
+    grid-template-columns:3fr 2fr 1fr;
 }
 
 .row-4{
     grid-template-columns:2fr 2fr 2fr 1fr;
 }
 
-input{
-    width:100%;
-    padding:8px;
-}
-
 label{
     display:block;
-    margin-bottom:5px;
+    margin-bottom:6px;
     font-weight:bold;
+    color:#333;
+}
+
+input[type="text"],
+input[type="number"]{
+    width:100%;
+    padding:10px;
+    border:1px solid #d5d5d5;
+    border-radius:6px;
+    font-size:14px;
+    box-sizing:border-box;
+}
+
+input:focus{
+    outline:none;
+    border-color:#8e2f2b;
+    box-shadow:0 0 4px rgba(142,47,43,.3);
 }
 
 .weekdays{
     display:flex;
-    gap:10px;
-    margin-bottom:20px;
     flex-wrap:wrap;
+    gap:15px;
+    margin:20px 0;
+}
+
+.weekdays label{
+    font-weight:normal;
 }
 
 table{
@@ -82,261 +101,306 @@ table{
     margin-top:20px;
 }
 
-th,td{
-    border:1px solid #ccc;
-    padding:8px;
-}
-
 th{
     background:#8e2f2b;
     color:white;
+    padding:12px;
+}
+
+td{
+    border:1px solid #ddd;
+    padding:8px;
 }
 
 td input{
     border:none;
+    box-shadow:none;
 }
 
 .bottom{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:20px;
-    margin-top:20px;
+    margin-top:25px;
 }
 
 .box{
-    border:1px solid #ccc;
-    padding:15px;
+    border:1px solid #d5d5d5;
+    border-radius:10px;
+    padding:20px;
+}
+
+.box h3{
+    margin-top:0;
+    color:#233247;
 }
 
 .btn-save{
-    margin-top:20px;
+    margin-top:25px;
     background:#8e2f2b;
     color:white;
     border:none;
     padding:12px 25px;
     border-radius:8px;
     cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-save:hover{
+    background:#742522;
+}
+
+@media(max-width:768px){
+
+    .row-3,
+    .row-4,
+    .bottom{
+        grid-template-columns:1fr;
+    }
+
+    .weekdays{
+        flex-direction:column;
+        gap:8px;
+    }
 }
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="container">
 
-<div class="nav-buttons">
-<button class="nav-btn"
-onclick="window.location.href='zeiterfassung.html'">
-⏱ Zur Zeiterfassung
-</button>
+    <div class="nav-buttons">
 
-<button class="nav-btn"
-onclick="window.location.href='dashboard.html'">
-🏠 Zum Dashboard
-</button>
-</div>
+        <button class="nav-btn"
+        onclick="window.location.href='zeiterfassung.html'">
+            ⏱ Zur Zeiterfassung
+        </button>
 
-<h1>🚛 Arbeitsnachweis LKW</h1>
+        <button class="nav-btn"
+        onclick="window.location.href='dashboard.html'">
+            🏠 Zum Dashboard
+        </button>
 
-<div class="row row-3">
-<div>
-<label>Name</label>
-<input type="text">
-</div>
+    </div>
 
-<div>
-<label>Datum</label>
-<input type="date">
-</div>
+    <h1>🚛 Arbeitsnachweis LKW</h1>
 
-<div>
-<label>Std.</label>
-<input type="number">
-</div>
-</div>
+    <div class="row row-3">
 
-<div class="weekdays">
-<label><input type="checkbox"> Mo</label>
-<label><input type="checkbox"> Di</label>
-<label><input type="checkbox"> Mi</label>
-<label><input type="checkbox"> Do</label>
-<label><input type="checkbox"> Fr</label>
-<label><input type="checkbox"> Sa</label>
-<label><input type="checkbox"> So</label>
-<label><input type="checkbox"> Sonn-/Feiertag</label>
-</div>
+        <div>
+            <label>Name</label>
+            <input type="text">
+        </div>
 
-<div class="row row-3">
-<div>
-<label>Abwesenheit von</label>
-<input type="time">
-</div>
+        <div>
+            <label>Datum</label>
+            <input type="text" placeholder="TT.MM.JJJJ">
+        </div>
 
-<div>
-<label>bis</label>
-<input type="time">
-</div>
+        <div>
+            <label>Std.</label>
+            <input type="number">
+        </div>
 
-<div>
-<label>Std.</label>
-<input type="number">
-</div>
-</div>
+    </div>
 
-<div class="row row-4">
-<div>
-<label>Arbeitsbeginn</label>
-<input type="time">
-</div>
+    <div class="weekdays">
 
-<div>
-<label>Pause</label>
-<input type="number">
-</div>
+        <label><input type="checkbox"> Mo</label>
+        <label><input type="checkbox"> Di</label>
+        <label><input type="checkbox"> Mi</label>
+        <label><input type="checkbox"> Do</label>
+        <label><input type="checkbox"> Fr</label>
+        <label><input type="checkbox"> Sa</label>
+        <label><input type="checkbox"> So</label>
+        <label><input type="checkbox"> Sonn-/Feiertag</label>
 
-<div>
-<label>Arbeitsende</label>
-<input type="time">
-</div>
+    </div>
 
-<div>
-<label>Arb.-Std.</label>
-<input type="number">
-</div>
-</div>
+    <div class="row row-3">
 
-<div class="row row-4">
-<div>
-<label>K.-Stelle</label>
-<input type="text">
-</div>
+        <div>
+            <label>Abwesenheit von</label>
+            <input type="text" placeholder="08:00">
+        </div>
 
-<div>
-<label>Kilometer</label>
-<input type="number">
-</div>
+        <div>
+            <label>bis</label>
+            <input type="text" placeholder="17:00">
+        </div>
 
-<div>
-<label>Tank Liter</label>
-<input type="number">
-</div>
+        <div>
+            <label>Std.</label>
+            <input type="number">
+        </div>
 
-<div>
-<label>Liter</label>
-<input type="number">
-</div>
-</div>
+    </div>
 
-<table>
-<tr>
-<th>Lieferschein-Nr.</th>
-<th>Material / Paletten</th>
-<th>Gewicht / Zeit</th>
-<th>von - nach / Firma / Tätigkeit</th>
-</tr>
+    <div class="row row-4">
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
+        <div>
+            <label>Arbeitsbeginn</label>
+            <input type="text" placeholder="08:00">
+        </div>
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
+        <div>
+            <label>Pause (Min.)</label>
+            <input type="number">
+        </div>
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
+        <div>
+            <label>Arbeitsende</label>
+            <input type="text" placeholder="17:00">
+        </div>
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
+        <div>
+            <label>Arb.-Std.</label>
+            <input type="number">
+        </div>
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
+    </div>
 
-<tr>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
-</table>
+    <div class="row row-4">
 
-<div class="bottom">
+        <div>
+            <label>K.-Stelle</label>
+            <input type="text">
+        </div>
 
-<div class="box">
-<h3>Rüstzeit</h3>
+        <div>
+            <label>Kilometer</label>
+            <input type="number">
+        </div>
 
-<label>von</label>
-<input type="time">
+        <div>
+            <label>Tank Liter</label>
+            <input type="number">
+        </div>
 
-<label>bis</label>
-<input type="time">
+        <div>
+            <label>Liter</label>
+            <input type="number">
+        </div>
 
-<label>Std.</label>
-<input type="number">
+    </div>
 
-<br><br>
+    <table>
 
-<h3>Wartung</h3>
+        <tr>
+            <th>Lieferschein-Nr.</th>
+            <th>Material / Paletten</th>
+            <th>Gewicht / Zeit</th>
+            <th>von - nach / Firma / Tätigkeit</th>
+        </tr>
 
-<label>von</label>
-<input type="time">
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<label>bis</label>
-<input type="time">
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<label>Std.</label>
-<input type="number">
-</div>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<div class="box">
-<h3>Reparatur</h3>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<label>von</label>
-<input type="time">
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<label>bis</label>
-<input type="time">
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
 
-<label>Std.</label>
-<input type="number">
+    </table>
 
-<br><br>
+    <div class="bottom">
 
-<h3>Fzg.-Pflege</h3>
+        <div class="box">
 
-<label>von</label>
-<input type="time">
+            <h3>Rüstzeit</h3>
 
-<label>bis</label>
-<input type="time">
+            <label>von</label>
+            <input type="text" placeholder="08:00">
 
-<label>Std.</label>
-<input type="number">
-</div>
+            <label>bis</label>
+            <input type="text" placeholder="09:00">
 
-</div>
+            <label>Std.</label>
+            <input type="number">
 
-<button class="btn-save">
-💾 Arbeitsnachweis LKW speichern
-</button>
+            <br><br>
+
+            <h3>Wartung</h3>
+
+            <label>von</label>
+            <input type="text" placeholder="08:00">
+
+            <label>bis</label>
+            <input type="text" placeholder="09:00">
+
+            <label>Std.</label>
+            <input type="number">
+
+        </div>
+
+        <div class="box">
+
+            <h3>Reparatur</h3>
+
+            <label>von</label>
+            <input type="text" placeholder="08:00">
+
+            <label>bis</label>
+            <input type="text" placeholder="09:00">
+
+            <label>Std.</label>
+            <input type="number">
+
+            <br><br>
+
+            <h3>Fzg.-Pflege</h3>
+
+            <label>von</label>
+            <input type="text" placeholder="08:00">
+
+            <label>bis</label>
+            <input type="text" placeholder="09:00">
+
+            <label>Std.</label>
+            <input type="number">
+
+        </div>
+
+    </div>
+
+    <button class="btn-save">
+        💾 Arbeitsnachweis LKW speichern
+    </button>
 
 </div>
 
