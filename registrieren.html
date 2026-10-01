@@ -1,3 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrierung</title>
+
+<style>
+body{
+    font-family: Arial,sans-serif;
+    background:#f0f0f0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#9b2d2d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Registrierung</h2>
+
+    <input id="vorname" type="text" placeholder="Vorname">
+    <input id="nachname" type="text" placeholder="Nachname">
+    <input id="email" type="email" placeholder="E-Mail">
+    <input id="handy" type="text" placeholder="Handynummer">
+    <input id="passwort" type="password" placeholder="Passwort">
+    <input id="passwort2" type="password" placeholder="Passwort wiederholen">
+
+    <button onclick="registrieren()">Registrieren</button>
+</div>
+
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
@@ -18,7 +79,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-window.registrieren = function () {
+window.registrieren = function() {
 
     const vorname = document.getElementById("vorname").value;
     const nachname = document.getElementById("nachname").value;
@@ -27,15 +88,15 @@ window.registrieren = function () {
     const passwort = document.getElementById("passwort").value;
     const passwort2 = document.getElementById("passwort2").value;
 
-    if (passwort !== passwort2) {
+    if(passwort !== passwort2){
         alert("Passwörter stimmen nicht überein!");
         return;
     }
 
-    createUserWithEmailAndPassword(auth, email, passwort)
+    createUserWithEmailAndPassword(auth,email,passwort)
     .then((userCredential) => {
 
-        set(ref(database, "users/" + userCredential.user.uid), {
+        set(ref(database,"users/" + userCredential.user.uid),{
             vorname: vorname,
             nachname: nachname,
             email: email,
@@ -48,6 +109,9 @@ window.registrieren = function () {
     .catch((error) => {
         alert(error.message);
     });
-};
+}
 
 </script>
+
+</body>
+</html>
