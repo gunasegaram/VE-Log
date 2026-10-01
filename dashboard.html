@@ -30,13 +30,17 @@ header{
     display:flex;
     align-items:center;
     gap:15px;
-    font-size:32px;
-    font-weight:bold;
 }
 
 .logo img{
-    height:60px;
+    height:70px;
     width:auto;
+}
+
+.logo span{
+    font-size:32px;
+    font-weight:bold;
+    color:white;
 }
 
 .container{
@@ -100,7 +104,7 @@ button:hover{
 
 <header>
     <div class="logo">
-        logo.png
+        <img src="logo.png" alt="VE-Log Logo">
         <span>VE-Log Dashboard</span>
     </div>
 
@@ -118,41 +122,4 @@ button:hover{
 
         <div class="card">
             <h3>🕒 Zeiterfassung</h3>
-            <p>Arbeitszeiten erfassen und verwalten.</p>
-        </div>
-
-        <div class="card">
-            <h3>👥 Mitarbeiter</h3>
-            <p>Mitarbeiterinformationen anzeigen.</p>
-        </div>
-
-        <div class="card">
-            <h3>🗓️ Urlaub</h3>
-            <p>Urlaubsanträge verwalten.</p>
-        </div>
-
-        <div class="card">
-            <h3>⚙️ Einstellungen</h3>
-            <p>Kontoeinstellungen bearbeiten.</p>
-        </div>
-
-    </div>
-
-</div>
-
-<script>
-const userEmail = localStorage.getItem("userEmail");
-
-if(userEmail){
-    document.getElementById("userEmail").innerHTML =
-        "Angemeldet als: <strong>" + userEmail + "</strong>";
-}
-
-function logout(){
-    localStorage.removeItem("userEmail");
-    window.location.href = "index.html";
-}
-</script>
-
-</body>
-</html>
+           
