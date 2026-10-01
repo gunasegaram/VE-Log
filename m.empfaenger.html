@@ -73,14 +73,19 @@ th{
 
 td{
     border:1px solid #ccc;
-    padding:3px;
+    padding:4px;
     vertical-align:top;
 }
 
-td input{
+.klein{
     width:100%;
+    min-height:120px;
     border:none;
-    padding:6px;
+    resize:none;
+    padding:8px;
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    background:transparent;
 }
 
 .gegenstand{
@@ -91,6 +96,7 @@ td input{
     padding:8px;
     font-family:Arial,sans-serif;
     font-size:14px;
+    background:transparent;
 }
 
 .signature{
@@ -103,7 +109,17 @@ td input{
 .sig-box{
     border:1px solid #ccc;
     padding:15px;
-    min-height:180px;
+    min-height:220px;
+    border-radius:8px;
+}
+
+.sig-input{
+    width:100%;
+    margin-top:5px;
+    margin-bottom:10px;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:5px;
 }
 
 .button-group{
@@ -118,8 +134,8 @@ td input{
     padding:12px 20px;
     border-radius:8px;
     cursor:pointer;
-    font-weight:bold;
     color:white;
+    font-weight:bold;
 }
 
 .speichern-btn{
@@ -192,7 +208,7 @@ td input{
     </div>
 
     <div>
-        <label>Baustelle Lager</label>
+        <label>Baustelle / Lager</label>
         <input type="text" id="baustelle">
     </div>
 
@@ -206,7 +222,7 @@ td input{
     </div>
 
     <div>
-        <label>Baustelle Lager</label>
+        <label>Empfänger</label>
         <input type="text" id="empfaenger">
     </div>
 
@@ -229,57 +245,57 @@ td input{
 <table>
 
 <tr>
-    <th style="width:8%">Bestell-<br>Menge</th>
-    <th style="width:8%">Liefer-<br>Menge</th>
+    <th style="width:8%">Bestell-Menge</th>
+    <th style="width:8%">Liefer-Menge</th>
     <th style="width:8%">Einheit</th>
     <th style="width:56%">Gegenstand</th>
-    <th style="width:10%">neu=n<br>gebr.=g</th>
+    <th style="width:10%">neu = n<br>gebr. = g</th>
     <th style="width:10%">Invent.-Nr.</th>
 </tr>
 
 <tr>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
     <td><textarea class="gegenstand"></textarea></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
 </tr>
 
 <tr>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
     <td><textarea class="gegenstand"></textarea></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
 </tr>
 
 <tr>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
     <td><textarea class="gegenstand"></textarea></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
 </tr>
 
 <tr>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
     <td><textarea class="gegenstand"></textarea></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
 </tr>
 
 <tr>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
     <td><textarea class="gegenstand"></textarea></td>
-    <td><input type="text"></td>
-    <td><input type="text"></td>
+    <td><textarea class="klein"></textarea></td>
+    <td><textarea class="klein"></textarea></td>
 </tr>
 
 </table>
@@ -287,57 +303,64 @@ td input{
 <div class="signature">
 
     <div class="sig-box">
+
         <strong>Absender</strong><br>
         für den richtigen Versand
 
-        <br><br><br>
-
-        _______________________
-
         <br><br>
 
-        Tag _____________ 20____
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
 
-        <br><br>
+        <label>Tag</label>
+        <input type="date" class="sig-input">
 
-        Uhrzeit _________________
+        <label>Uhrzeit</label>
+        <input type="time" class="sig-input">
+
     </div>
 
     <div class="sig-box">
+
         <strong>Fuhrunternehmer</strong><br>
         für die richtige Übernahme
 
-        <br><br><br><br>
+        <br><br>
 
-        _______________________
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
+
     </div>
 
     <div class="sig-box">
+
         <strong>Empfänger</strong>
-
-        <br><br><br><br>
-
-        _______________________
 
         <br><br>
 
-        Tag _____________ 20____
+        <label>Unterschrift</label>
+        <input type="text" class="sig-input">
+
+        <label>Tag</label>
+        <input type="date" class="sig-input">
+
     </div>
 
     <div class="sig-box">
+
         <strong>Externe Abrechnung</strong>
 
         <br><br>
 
-        Rz __________________
+        <label>Rz</label>
+        <input type="text" class="sig-input">
 
-        <br><br>
+        <label>Betr</label>
+        <input type="text" class="sig-input">
 
-        Betr ________________
+        <label>Tarif</label>
+        <input type="text" class="sig-input">
 
-        <br><br>
-
-        Tarif __________________
     </div>
 
 </div>
