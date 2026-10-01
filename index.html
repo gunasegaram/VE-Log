@@ -99,19 +99,57 @@ button:hover{
     <p>Melde dich mit deinem Mitarbeiterkonto an.</p>
 
     <label>E-Mail-Adresse</label>
-    <input type="email" placeholder="name@unternehmen.de">
+    <input id="email" type="email" placeholder="name@unternehmen.de">
 
     <label>Passwort</label>
-    <input type="password" placeholder="Passwort eingeben">
+    <input id="passwort" type="password" placeholder="Passwort eingeben">
 
-    <button>Anmelden</button>
-    
-<div class="register">
-    <p>Noch kein Konto?</p>
-    <a href="registrieren.html">Jetzt registrieren
+    <button onclick="anmelden()">Anmelden</button>
+
+    <div class="register">
+        <p>Noch kein Konto?</p>
+        <a href="registrieren.html">Jetzt registrieren</a>
+    </div>
+
 </div>
 
-</div>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAeHeDYRadHkcdZRy1ybdlL0vcpyTCZlXM",
+  authDomain: "ve-log.firebaseapp.com",
+  databaseURL: "https://ve-log-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "ve-log",
+  storageBucket: "ve-log.firebasestorage.app",
+  messagingSenderId: "749978080433",
+  appId: "1:749978080433:web:8f64ef99a557fe2346be90"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+window.anmelden = function () {
+
+    const email = document.getElementById("email").value;
+    const passwort = document.getElementById("passwort").value;
+
+    signInWithEmailAndPassword(auth, email, passwort)
+    .then(() => {
+
+        window.location.href = "dashboard.html";
+
+    })
+    .catch((error) => {
+
+        alert("Anmeldung fehlgeschlagen: " + error.message);
+
+    });
+};
+
+</script>
 
 </body>
 </html>
