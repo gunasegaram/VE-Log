@@ -96,6 +96,7 @@ button:hover{
 #userEmail{
     margin-top:10px;
     color:#666;
+    font-size:16px;
 }
 </style>
 </head>
@@ -103,24 +104,27 @@ button:hover{
 <body>
 
 <header>
+
     <div class="logo">
         <img src="logo.png" alt="VE-Log Logo">
         <span>VE-Log Dashboard</span>
     </div>
 
     <button onclick="logout()">Abmelden</button>
+
 </header>
 
 <div class="container">
 
     <div class="welcome">
         <h1>Willkommen bei VE-Log</h1>
-        <p id="userEmail">Angemeldet als:</p>
+        <p id="userEmail">Lade Benutzerdaten...</p>
     </div>
 
     <div class="cards">
 
-        <div class="card" onclick="window.location.href='zeiterfassung.html'">
+        <div class="card"
+             onclick="window.location.href='zeiterfassung.html'">
             <h3>🕒 Zeiterfassung</h3>
             <p>Arbeitszeiten erfassen und verwalten.</p>
         </div>
@@ -145,17 +149,32 @@ button:hover{
 </div>
 
 <script>
+
 const userEmail = localStorage.getItem("userEmail");
 
-if (userEmail) {
+if(userEmail){
+
     document.getElementById("userEmail").innerHTML =
-        "Angemeldet als: <strong>" + userEmail + "</strong>";
+        `Angemeldet als: <strong>${userEmail}</strong>`;
+
+}else{
+
+    document.getElementById("userEmail").innerHTML =
+        `<span style="color:red;">
+            Kein Benutzer angemeldet
+         </span>`;
+
 }
 
-function logout() {
+function logout(){
+
     localStorage.removeItem("userEmail");
+    localStorage.removeItem("uid");
+
     window.location.href = "index.html";
+
 }
+
 </script>
 
 </body>
