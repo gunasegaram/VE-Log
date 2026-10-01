@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VE-Log Dashboard</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+
+.header{
+    background:#9b2d2d;
+    color:white;
+    padding:15px;
+}
+
+.content{
+    padding:20px;
+}
+
+button{
+    background:#9b2d2d;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h2>VE-Log Dashboard</h2>
+</div>
+
+<div class="content">
+    <h3>Willkommen</h3>
+
+    <p id="userEmail"></p>
+
+    <button onclick="logout()">Abmelden</button>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "DEIN_API_KEY",
+  authDomain: "ve-log.firebaseapp.com",
+  databaseURL: "https://ve-log-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "ve-log",
+  storageBucket: "ve-log.firebasestorage.app",
+  messagingSenderId: "749978080433",
+  appId: "1:749978080433:web:8f64ef99a557fe2346be90"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+
+    if(user){
+        document.getElementById("userEmail").innerText =
+            "Angemeldet als: " + user.email;
+    } else {
+        window.location.href = "index.html";
+    }
+
+});
+
+window.logout = function(){
+    signOut(auth);
+};
+</script>
+
+</body>
+</html>
