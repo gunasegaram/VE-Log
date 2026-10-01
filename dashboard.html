@@ -27,8 +27,16 @@ header{
 }
 
 .logo{
-    font-size:24px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:32px;
     font-weight:bold;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
 }
 
 .container{
@@ -54,6 +62,12 @@ header{
     padding:25px;
     border-radius:15px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
@@ -85,15 +99,19 @@ button:hover{
 <body>
 
 <header>
-    <div class="logo">VE-Log Dashboard</div>
+    <div class="logo">
+        logo.png
+        <span>VE-Log Dashboard</span>
+    </div>
+
     <button onclick="logout()">Abmelden</button>
 </header>
 
 <div class="container">
 
     <div class="welcome">
-        <h2>Willkommen bei VE-Log</h2>
-        <p id="userEmail">Benutzer wird geladen...</p>
+        <h1>Willkommen bei VE-Log</h1>
+        <p id="userEmail">Angemeldet als:</p>
     </div>
 
     <div class="cards">
@@ -109,7 +127,7 @@ button:hover{
         </div>
 
         <div class="card">
-            <h3>📅 Urlaub</h3>
+            <h3>🗓️ Urlaub</h3>
             <p>Urlaubsanträge verwalten.</p>
         </div>
 
@@ -122,42 +140,18 @@ button:hover{
 
 </div>
 
-<script type="module">
+<script>
+const userEmail = localStorage.getItem("userEmail");
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+if(userEmail){
+    document.getElementById("userEmail").innerHTML =
+        "Angemeldet als: <strong>" + userEmail + "</strong>";
+}
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAeHeDYRadHkcdZRy1ybdlL0vcpyTCZlXM",
-    authDomain: "ve-log.firebaseapp.com",
-    databaseURL: "https://ve-log-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "ve-log",
-    storageBucket: "ve-log.firebasestorage.app",
-    messagingSenderId: "749978080433",
-    appId: "1:749978080433:web:8f64ef99a557fe2346be90"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-onAuthStateChanged(auth, (user) => {
-
-    if(user){
-        document.getElementById("userEmail").innerHTML =
-        "Angemeldet als: <b>" + user.email + "</b>";
-    } else {
-        window.location.href = "index.html";
-    }
-
-});
-
-window.logout = function(){
-    signOut(auth)
-    .then(() => {
-        window.location.href = "index.html";
-    });
-};
-
+function logout(){
+    localStorage.removeItem("userEmail");
+    window.location.href = "index.html";
+}
 </script>
 
 </body>
