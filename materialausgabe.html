@@ -38,25 +38,23 @@ body{
 
     color:#222;
 
-    padding:0;
-
     overflow-x:hidden;
 }
 
 
 /* =========================================================
-   HAUPT-KARTE
+   HAUPT-FORMULAR
 ========================================================= */
 
 .formular{
 
-    width:100%;
+    width:calc(100% - 30px);
 
     max-width:1000px;
 
-    margin:0 auto;
+    margin:15px auto;
 
-    background:#fff;
+    background:#ffffff;
 
     border-radius:15px;
 
@@ -69,7 +67,7 @@ body{
 
 
 /* =========================================================
-   TOP NAVIGATION
+   TOP BUTTONS
 ========================================================= */
 
 .top-buttons{
@@ -78,7 +76,7 @@ body{
 
     gap:10px;
 
-    margin-bottom:16px;
+    margin-bottom:18px;
 }
 
 .top-button{
@@ -93,7 +91,7 @@ body{
 
     background:#8e2f2b;
 
-    color:white;
+    color:#ffffff;
 
     border:none;
 
@@ -101,18 +99,20 @@ body{
 
     padding:10px 18px;
 
+    min-height:42px;
+
     font-size:14px;
 
     font-weight:bold;
 
     cursor:pointer;
 
-    min-height:42px;
 }
 
 .top-button:hover{
 
     background:#742522;
+
 }
 
 
@@ -130,7 +130,6 @@ body{
 
     gap:30px;
 
-    min-height:180px;
 }
 
 
@@ -146,20 +145,18 @@ body{
 
     font-weight:bold;
 
-    margin-top:2px;
+    margin-bottom:18px;
 
-    margin-bottom:20px;
 }
 
 .lieferschein{
 
-    font-size:17px;
+    color:#18395b;
+
+    font-size:16px;
 
     font-weight:bold;
 
-    color:#18395b;
-
-    margin-top:20px;
 }
 
 .lieferschein span{
@@ -169,6 +166,7 @@ body{
     font-size:24px;
 
     margin-left:5px;
+
 }
 
 
@@ -181,6 +179,7 @@ body{
     text-align:right;
 
     flex-shrink:0;
+
 }
 
 .logo-img{
@@ -192,6 +191,7 @@ body{
     height:auto;
 
     display:block;
+
 }
 
 .logo p{
@@ -203,6 +203,7 @@ body{
     line-height:1.45;
 
     color:#444;
+
 }
 
 
@@ -212,14 +213,15 @@ body{
 
 .linie{
 
-    border-top:1px solid #bbb;
+    border-top:1px solid #aaa;
 
-    margin:20px 0 25px 0;
+    margin:22px 0 25px 0;
+
 }
 
 
 /* =========================================================
-   FELDER
+   STAMMDATEN
 ========================================================= */
 
 .grid{
@@ -232,24 +234,27 @@ body{
     column-gap:25px;
 
     row-gap:18px;
+
 }
 
 .feld{
 
     width:100%;
+
 }
 
 .feld label{
 
     display:block;
 
-    color:#111;
+    font-size:13px;
 
     font-weight:bold;
 
     margin-bottom:5px;
 
-    font-size:14px;
+    color:#222;
+
 }
 
 .feld input{
@@ -258,54 +263,78 @@ body{
 
     height:38px;
 
-    border:none;
-
-    border-bottom:1px solid #999;
-
-    background:transparent;
-
     padding:5px 8px;
 
     font-size:15px;
 
+    background:transparent;
+
+    border:none;
+
+    border-bottom:1px solid #999;
+
     outline:none;
+
 }
 
 .feld input:focus{
 
     border-bottom:2px solid #8e2f2b;
+
 }
 
 .voll{
 
     grid-column:1/-1;
+
 }
 
 
 /* =========================================================
-   MATERIAL
+   MATERIAL KASTEN
 ========================================================= */
 
 .materialbox{
 
+    width:100%;
+
     margin-top:28px;
 
-    padding:0;
+    padding:14px 12px 12px 12px;
 
-    border:none;
+    border:1px solid #777;
+
+    border-radius:5px;
+
+    background:#ffffff;
+
 }
+
+
+/* Überschrift im Kasten */
 
 .materialbox h3{
 
-    color:#18395b;
+    font-size:13px;
 
-    font-size:17px;
+    font-weight:bold;
 
-    margin-bottom:18px;
+    color:#222;
+
+    padding-bottom:6px;
+
+    margin-bottom:0;
+
+    border-bottom:1px solid #777;
+
+    text-transform:uppercase;
+
 }
 
 
-/* Material Zeilen */
+/* =========================================================
+   MATERIAL / MENGE
+========================================================= */
 
 .material-grid{
 
@@ -314,40 +343,52 @@ body{
     grid-template-columns:
         3fr 1fr;
 
-    gap:25px;
+    gap:14px;
+
+    padding-top:7px;
+
+    padding-bottom:10px;
+
+    border-bottom:1px solid #777;
+
 }
 
 .material-grid label{
 
     display:block;
 
+    font-size:12px;
+
     font-weight:bold;
 
-    font-size:14px;
+    margin-bottom:3px;
 
-    margin-bottom:5px;
 }
 
 .material-grid input{
 
     width:100%;
 
-    height:38px;
+    height:31px;
 
     border:none;
 
     border-bottom:1px solid #999;
 
-    padding:5px 8px;
+    padding:3px 5px;
 
-    font-size:15px;
+    font-size:14px;
 
     outline:none;
+
+    background:transparent;
+
 }
 
 .material-grid input:focus{
 
     border-bottom:2px solid #8e2f2b;
+
 }
 
 
@@ -362,11 +403,12 @@ body{
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:12px 25px;
+    column-gap:25px;
 
-    margin-top:22px;
+    row-gap:8px;
 
-    padding-top:5px;
+    padding-top:8px;
+
 }
 
 .checkboxen label{
@@ -375,20 +417,26 @@ body{
 
     align-items:center;
 
-    gap:8px;
+    gap:6px;
 
-    font-size:14px;
+    font-size:12px;
+
+    min-height:20px;
 
     cursor:pointer;
+
 }
 
 .checkboxen input{
 
-    width:16px;
+    width:15px;
 
-    height:16px;
+    height:15px;
+
+    margin:0;
 
     accent-color:#8e2f2b;
+
 }
 
 
@@ -398,47 +446,48 @@ body{
 
 .bemerkungen{
 
-    margin-top:28px;
+    margin-top:22px;
+
 }
 
 .bemerkungen label{
 
     display:block;
 
+    font-size:13px;
+
     font-weight:bold;
 
-    color:#18395b;
+    margin-bottom:6px;
 
-    margin-bottom:8px;
 }
 
 .bemerkungen textarea{
 
     width:100%;
 
-    min-height:100px;
+    min-height:90px;
 
     resize:vertical;
 
-    border:1px solid #ccc;
+    border:none;
 
-    border-radius:5px;
+    border-bottom:1px solid #999;
 
-    padding:10px;
+    padding:8px 5px;
 
-    font-family:Arial,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 
     font-size:14px;
 
     outline:none;
+
 }
 
 .bemerkungen textarea:focus{
 
-    border-color:#8e2f2b;
+    border-bottom:2px solid #8e2f2b;
 
-    box-shadow:
-        0 0 0 2px rgba(142,47,43,0.08);
 }
 
 
@@ -456,41 +505,45 @@ body{
     gap:25px;
 
     margin-top:30px;
+
 }
 
 .signature-box{
 
     width:100%;
+
 }
 
 .signature-title{
 
     color:#18395b;
 
+    font-size:13px;
+
     font-weight:bold;
 
-    font-size:14px;
+    margin-bottom:7px;
 
-    margin-bottom:8px;
 }
 
 .signature-pad{
-
-    display:block;
 
     width:100%;
 
     height:150px;
 
-    background:#fff;
+    display:block;
+
+    background:#ffffff;
 
     border:1px solid #ccc;
 
-    border-radius:7px;
+    border-radius:6px;
 
     touch-action:none;
 
     cursor:crosshair;
+
 }
 
 .sign-text{
@@ -501,11 +554,12 @@ body{
 
     border-top:1px solid #999;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:bold;
 
     color:#444;
+
 }
 
 
@@ -517,11 +571,12 @@ body{
 
     display:flex;
 
-    gap:7px;
-
     flex-wrap:wrap;
 
-    margin-top:8px;
+    gap:6px;
+
+    margin-top:7px;
+
 }
 
 .signature-button{
@@ -530,42 +585,48 @@ body{
 
     border-radius:5px;
 
-    padding:8px 10px;
+    padding:7px 10px;
 
-    font-size:12px;
-
-    font-weight:bold;
+    min-height:34px;
 
     color:white;
 
+    font-size:11px;
+
+    font-weight:bold;
+
     cursor:pointer;
 
-    min-height:36px;
 }
 
 .signature-delete{
 
     background:#777;
+
 }
 
 .signature-upload{
 
     background:#444;
+
 }
 
 .signature-png{
 
     background:#1f4e79;
+
 }
 
 .signature-button:hover{
 
     opacity:.9;
+
 }
 
 .file-input{
 
     display:none;
+
 }
 
 
@@ -577,18 +638,19 @@ body{
 
     display:flex;
 
-    gap:10px;
-
     flex-wrap:wrap;
 
-    margin-top:30px;
+    gap:10px;
 
-    padding-top:20px;
+    margin-top:28px;
+
+    padding-top:18px;
 
     border-top:1px solid #ddd;
+
 }
 
-button{
+.buttons button{
 
     border:none;
 
@@ -598,38 +660,44 @@ button{
 
     min-height:44px;
 
-    color:white;
-
-    font-weight:bold;
+    color:#ffffff;
 
     font-size:14px;
 
+    font-weight:bold;
+
     cursor:pointer;
+
 }
 
-button:hover{
+.buttons button:hover{
 
     opacity:.9;
+
 }
 
 .save{
 
     background:#8e2f2b;
+
 }
 
 .pdf{
 
     background:#1f4e79;
+
 }
 
 .print{
 
     background:#444;
+
 }
 
 .clear{
 
     background:#777;
+
 }
 
 
@@ -639,15 +707,11 @@ button:hover{
 
 @media(max-width:900px){
 
-    body{
-        padding:0;
-    }
-
     .formular{
 
-        max-width:none;
+        width:calc(100% - 20px);
 
-        margin:15px;
+        margin:10px auto;
 
         padding:22px;
 
@@ -656,16 +720,13 @@ button:hover{
     .kopf{
 
         gap:20px;
+
     }
 
     .logo-img{
 
         width:210px;
-    }
 
-    .signaturen{
-
-        gap:18px;
     }
 
 }
@@ -677,25 +738,20 @@ button:hover{
 
 @media(max-width:650px){
 
-    body{
-
-        background:#f4f4f4;
-
-    }
-
     .formular{
-
-        margin:0;
 
         width:100%;
 
-        min-height:100vh;
+        margin:0;
 
-        border-radius:0;
+        min-height:100vh;
 
         padding:15px;
 
+        border-radius:0;
+
         box-shadow:none;
+
     }
 
 
@@ -706,15 +762,17 @@ button:hover{
         width:100%;
 
         gap:8px;
+
     }
 
     .top-button{
 
         flex:1;
 
-        padding:10px 8px;
+        padding:10px 7px;
 
         font-size:13px;
+
     }
 
 
@@ -724,9 +782,34 @@ button:hover{
 
         flex-direction:column;
 
-        min-height:auto;
-
         gap:15px;
+
+    }
+
+    .logo{
+
+        order:-1;
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .logo-img{
+
+        width:210px;
+
+        margin:0 auto;
+
+    }
+
+    .logo p{
+
+        text-align:center;
+
+        font-size:11px;
+
     }
 
 
@@ -735,49 +818,26 @@ button:hover{
         font-size:20px;
 
         margin-bottom:12px;
+
     }
 
     .lieferschein{
 
-        font-size:15px;
+        font-size:14px;
+
     }
 
     .lieferschein span{
 
         font-size:21px;
-    }
 
-
-    .logo{
-
-        width:100%;
-
-        text-align:center;
-
-        order:-1;
-
-    }
-
-
-    .logo-img{
-
-        width:210px;
-
-        margin:0 auto;
-    }
-
-
-    .logo p{
-
-        font-size:11px;
-
-        text-align:center;
     }
 
 
     .linie{
 
         margin:18px 0 20px;
+
     }
 
 
@@ -788,59 +848,86 @@ button:hover{
         grid-template-columns:1fr;
 
         gap:15px;
+
     }
 
     .voll{
 
         grid-column:auto;
-    }
 
+    }
 
     .feld input{
 
-        height:44px;
+        height:43px;
 
         font-size:16px;
+
     }
 
 
-    /* Material */
+    /* Material Kasten */
+
+    .materialbox{
+
+        margin-top:24px;
+
+        padding:12px 10px 10px;
+
+    }
+
 
     .material-grid{
 
         grid-template-columns:1fr;
 
-        gap:15px;
+        gap:10px;
+
     }
 
 
     .material-grid input{
 
-        height:44px;
+        height:40px;
 
         font-size:16px;
+
     }
 
-
-    /* Checkboxen */
 
     .checkboxen{
 
         grid-template-columns:
             1fr 1fr;
 
-        gap:12px;
+        column-gap:12px;
+
+        row-gap:10px;
+
+    }
+
+
+    .checkboxen label{
+
+        font-size:13px;
 
     }
 
 
     /* Bemerkungen */
 
+    .bemerkungen{
+
+        margin-top:20px;
+
+    }
+
     .bemerkungen textarea{
 
-        min-height:120px;
+        min-height:110px;
 
         font-size:16px;
+
     }
 
 
@@ -851,13 +938,13 @@ button:hover{
         grid-template-columns:1fr;
 
         gap:25px;
+
     }
 
     .signature-pad{
 
         height:180px;
 
-        touch-action:none;
     }
 
 
@@ -868,16 +955,18 @@ button:hover{
         grid-template-columns:
             1fr;
 
-        gap:7px;
+        gap:6px;
+
     }
 
     .signature-button{
 
         width:100%;
 
-        min-height:42px;
+        min-height:40px;
 
         font-size:13px;
+
     }
 
 
@@ -890,6 +979,7 @@ button:hover{
         grid-template-columns:1fr;
 
         gap:8px;
+
     }
 
     .buttons button{
@@ -899,6 +989,7 @@ button:hover{
         min-height:48px;
 
         font-size:15px;
+
     }
 
 }
@@ -913,6 +1004,7 @@ button:hover{
     .formular{
 
         padding:12px;
+
     }
 
     .top-button{
@@ -920,11 +1012,13 @@ button:hover{
         font-size:12px;
 
         padding:9px 5px;
+
     }
 
     .checkboxen{
 
         grid-template-columns:1fr;
+
     }
 
 }
@@ -941,16 +1035,18 @@ button:hover{
         size:A4;
 
         margin:12mm;
+
     }
 
     body{
 
         background:white;
 
-        padding:0;
     }
 
     .formular{
+
+        width:100%;
 
         max-width:none;
 
@@ -961,6 +1057,7 @@ button:hover{
         border-radius:0;
 
         box-shadow:none;
+
     }
 
     .top-buttons,
@@ -968,11 +1065,13 @@ button:hover{
     .signature-buttons{
 
         display:none !important;
+
     }
 
     .signature-pad{
 
         border:1px solid #999;
+
     }
 
 }
@@ -985,7 +1084,10 @@ button:hover{
 <body>
 
 
-<div class="formular" id="formular">
+<div
+    class="formular"
+    id="formular"
+>
 
 
 <!-- =====================================================
@@ -1000,6 +1102,7 @@ button:hover{
     >
         📄 Formular
     </a>
+
 
     <a
         href="index.html"
@@ -1039,7 +1142,6 @@ button:hover{
     </div>
 
 
-
     <div class="logo">
 
         <img
@@ -1047,6 +1149,7 @@ button:hover{
             alt="VE-LOG Logo"
             class="logo-img"
         >
+
 
         <p>
 
@@ -1151,15 +1254,18 @@ button:hover{
 
 
 <!-- =====================================================
-     MATERIAL
+     MATERIAL & MENGE
 ===================================================== -->
 
 <div class="materialbox">
 
+
     <h3>
-        Material & Menge
+        Material &amp; Menge
     </h3>
 
+
+    <!-- Material und Menge -->
 
     <div class="material-grid">
 
@@ -1167,7 +1273,7 @@ button:hover{
         <div>
 
             <label>
-                Material
+                MATERIAL
             </label>
 
             <input
@@ -1181,7 +1287,7 @@ button:hover{
         <div>
 
             <label>
-                Menge
+                MENGE
             </label>
 
             <input
@@ -1195,6 +1301,8 @@ button:hover{
     </div>
 
 
+
+    <!-- Checkboxen -->
 
     <div class="checkboxen">
 
@@ -1273,6 +1381,7 @@ button:hover{
 
     </div>
 
+
 </div>
 
 
@@ -1283,13 +1392,16 @@ button:hover{
 
 <div class="bemerkungen">
 
+
     <label>
-        Bemerkungen
+        BEMERKUNGEN
     </label>
+
 
     <textarea
         id="bemerkungen"
     ></textarea>
+
 
 </div>
 
@@ -1305,6 +1417,7 @@ button:hover{
     <!-- AUSGEBER -->
 
     <div class="signature-box">
+
 
         <div class="signature-title">
             Unterschrift Ausgeber
@@ -1363,6 +1476,7 @@ button:hover{
             UNTERSCHRIFT AUSGEBER
         </div>
 
+
     </div>
 
 
@@ -1370,6 +1484,7 @@ button:hover{
     <!-- EMPFÄNGER -->
 
     <div class="signature-box">
+
 
         <div class="signature-title">
             Unterschrift Empfänger
@@ -1428,6 +1543,7 @@ button:hover{
             UNTERSCHRIFT EMPFÄNGER
         </div>
 
+
     </div>
 
 
@@ -1443,6 +1559,7 @@ button:hover{
 
 
     <button
+        type="button"
         class="save"
         onclick="speichernFormular()"
     >
@@ -1451,6 +1568,7 @@ button:hover{
 
 
     <button
+        type="button"
         class="pdf"
         onclick="window.print()"
     >
@@ -1459,6 +1577,7 @@ button:hover{
 
 
     <button
+        type="button"
         class="print"
         onclick="window.print()"
     >
@@ -1467,6 +1586,7 @@ button:hover{
 
 
     <button
+        type="button"
         class="clear"
         onclick="clearAllSignatures()"
     >
@@ -1497,25 +1617,28 @@ function generateLieferschein(){
 
     );
 
+
     nr++;
+
 
     localStorage.setItem(
         "materialNr",
         nr
     );
 
+
     return nr
         .toString()
         .padStart(5,"0");
+
 }
 
 
 /* =========================================================
-   SIGNATUR
+   SIGNATURE PADS
 ========================================================= */
 
 const pads = {};
-
 
 
 function createPad(id){
@@ -1530,11 +1653,10 @@ function createPad(id){
         canvas.getContext("2d");
 
 
+    let drawing = false;
+
+
     function resizeCanvas(){
-
-        const oldImage =
-            canvas.toDataURL();
-
 
         const rect =
             canvas.getBoundingClientRect();
@@ -1568,30 +1690,7 @@ function createPad(id){
 
         ctx.lineJoin = "round";
 
-        ctx.strokeStyle = "#000";
-
-
-        if(oldImage !== "data:,"){
-
-            const img =
-                new Image();
-
-            img.onload =
-                function(){
-
-                    ctx.drawImage(
-                        img,
-                        0,
-                        0,
-                        rect.width,
-                        rect.height
-                    );
-
-                };
-
-            img.src = oldImage;
-
-        }
+        ctx.strokeStyle = "#000000";
 
     }
 
@@ -1605,7 +1704,7 @@ function createPad(id){
     );
 
 
-    function position(e){
+    function getPosition(e){
 
         const rect =
             canvas.getBoundingClientRect();
@@ -1630,29 +1729,31 @@ function createPad(id){
         "pointerdown",
         function(e){
 
+            e.preventDefault();
+
+
             canvas.setPointerCapture(
                 e.pointerId
             );
 
 
-            const p =
-                position(e);
+            const pos =
+                getPosition(e);
 
 
             drawing = true;
 
+
             ctx.beginPath();
 
+
             ctx.moveTo(
-                p.x,
-                p.y
+                pos.x,
+                pos.y
             );
 
         }
     );
-
-
-    let drawing = false;
 
 
     canvas.addEventListener(
@@ -1662,14 +1763,18 @@ function createPad(id){
             if(!drawing) return;
 
 
-            const p =
-                position(e);
+            e.preventDefault();
+
+
+            const pos =
+                getPosition(e);
 
 
             ctx.lineTo(
-                p.x,
-                p.y
+                pos.x,
+                pos.y
             );
+
 
             ctx.stroke();
 
@@ -1708,7 +1813,6 @@ function createPad(id){
 }
 
 
-
 /* =========================================================
    SIGNATUR LÖSCHEN
 ========================================================= */
@@ -1717,6 +1821,7 @@ function clearCanvas(id){
 
     const pad =
         pads[id];
+
 
     if(!pad) return;
 
@@ -1730,13 +1835,7 @@ function clearCanvas(id){
 
     );
 
-
-    localStorage.removeItem(
-        "signature_" + id
-    );
-
 }
-
 
 
 /* =========================================================
@@ -1745,7 +1844,10 @@ function clearCanvas(id){
 
 function clearAllSignatures(){
 
-    clearCanvas("ausgeber");
+    clearCanvas(
+        "ausgeber"
+    );
+
 
     clearCanvas(
         "empfaengerSignatur"
@@ -1754,25 +1856,29 @@ function clearAllSignatures(){
 }
 
 
-
 /* =========================================================
    SIGNATUR HOCHLADEN
 ========================================================= */
 
 function uploadSignature(id){
 
-    document
-        .getElementById(
+    const input =
+        document.getElementById(
             "upload-" + id
-        )
-        .click();
+        );
+
+
+    if(input){
+
+        input.click();
+
+    }
 
 }
 
 
-
 /* =========================================================
-   HOCHGELADENE SIGNATUR
+   SIGNATUR AUS BILD LADEN
 ========================================================= */
 
 function loadSignature(
@@ -1782,6 +1888,7 @@ function loadSignature(
 
     const file =
         input.files[0];
+
 
     if(!file) return;
 
@@ -1810,6 +1917,7 @@ function loadSignature(
                     const canvas =
                         pad.canvas;
 
+
                     const ctx =
                         pad.ctx;
 
@@ -1817,48 +1925,61 @@ function loadSignature(
                     const width =
                         canvas.clientWidth;
 
+
                     const height =
                         canvas.clientHeight;
 
 
                     ctx.clearRect(
+
                         0,
                         0,
                         canvas.width,
                         canvas.height
+
                     );
 
 
                     const scale =
                         Math.min(
 
-                            width / img.width,
+                            width /
+                            img.width,
 
-                            height / img.height
+                            height /
+                            img.height
 
                         );
 
 
                     const w =
-                        img.width * scale;
+                        img.width *
+                        scale;
+
 
                     const h =
-                        img.height * scale;
+                        img.height *
+                        scale;
 
 
                     const x =
                         (width - w) / 2;
+
 
                     const y =
                         (height - h) / 2;
 
 
                     ctx.drawImage(
+
                         img,
+
                         x,
                         y,
+
                         w,
                         h
+
                     );
 
                 };
@@ -1875,15 +1996,15 @@ function loadSignature(
 }
 
 
-
 /* =========================================================
-   PNG SPEICHERN
+   SIGNATUR ALS PNG SPEICHERN
 ========================================================= */
 
 function saveSignaturePNG(id){
 
     const pad =
         pads[id];
+
 
     if(!pad) return;
 
@@ -1893,7 +2014,8 @@ function saveSignaturePNG(id){
 
 
     link.download =
-        id + "_Unterschrift.png";
+        id +
+        "_Unterschrift.png";
 
 
     link.href =
@@ -1905,7 +2027,6 @@ function saveSignaturePNG(id){
     link.click();
 
 }
-
 
 
 /* =========================================================
@@ -1971,6 +2092,36 @@ function speichernFormular(){
                 "menge"
             ).value,
 
+        diesel:
+            document.getElementById(
+                "diesel"
+            ).checked,
+
+        adblue:
+            document.getElementById(
+                "adblue"
+            ).checked,
+
+        fett:
+            document.getElementById(
+                "fett"
+            ).checked,
+
+        wasser:
+            document.getElementById(
+                "wasser"
+            ).checked,
+
+        oel:
+            document.getElementById(
+                "oel"
+            ).checked,
+
+        sonstiges:
+            document.getElementById(
+                "sonstiges"
+            ).checked,
+
         bemerkungen:
             document.getElementById(
                 "bemerkungen"
@@ -1988,39 +2139,21 @@ function speichernFormular(){
     );
 
 
-    /* Signaturen */
-
-    Object.keys(pads).forEach(
-        function(id){
-
-            localStorage.setItem(
-
-                "signature_" + id,
-
-                pads[id]
-                    .canvas
-                    .toDataURL(
-                        "image/png"
-                    )
-
-            );
-
-        }
-    );
-
-
     alert(
+
         "✅ Formular wurde gespeichert.\n\n" +
+
         "Lieferschein Nr.: " +
+
         nummer.innerText
+
     );
 
 }
 
 
-
 /* =========================================================
-   GESPEICHERTE DATEN LADEN
+   FORMULAR LADEN
 ========================================================= */
 
 function loadFormular(){
@@ -2035,76 +2168,100 @@ function loadFormular(){
         );
 
 
-    if(daten){
-
-        document.getElementById(
-            "lieferscheinNr"
-        ).innerText =
-            daten.lieferscheinNr ||
-            "00000";
+    if(!daten) return;
 
 
-        document.getElementById(
-            "empfaengerName"
-        ).value =
-            daten.empfaenger || "";
+    document.getElementById(
+        "lieferscheinNr"
+    ).innerText =
+        daten.lieferscheinNr ||
+        "00000";
 
 
-        document.getElementById(
-            "datum"
-        ).value =
-            daten.datum || "";
+    document.getElementById(
+        "empfaengerName"
+    ).value =
+        daten.empfaenger || "";
 
 
-        document.getElementById(
-            "geraet"
-        ).value =
-            daten.geraet || "";
+    document.getElementById(
+        "datum"
+    ).value =
+        daten.datum || "";
 
 
-        document.getElementById(
-            "fahrer"
-        ).value =
-            daten.fahrer || "";
+    document.getElementById(
+        "geraet"
+    ).value =
+        daten.geraet || "";
 
 
-        document.getElementById(
-            "baustelle"
-        ).value =
-            daten.baustelle || "";
+    document.getElementById(
+        "fahrer"
+    ).value =
+        daten.fahrer || "";
 
 
-        document.getElementById(
-            "material"
-        ).value =
-            daten.material || "";
+    document.getElementById(
+        "baustelle"
+    ).value =
+        daten.baustelle || "";
 
 
-        document.getElementById(
-            "menge"
-        ).value =
-            daten.menge || "";
+    document.getElementById(
+        "material"
+    ).value =
+        daten.material || "";
 
 
-        document.getElementById(
-            "bemerkungen"
-        ).value =
-            daten.bemerkungen || "";
-
-    }
+    document.getElementById(
+        "menge"
+    ).value =
+        daten.menge || "";
 
 
-    loadSignature(
-        "ausgeber"
-    );
+    document.getElementById(
+        "diesel"
+    ).checked =
+        daten.diesel || false;
 
 
-    loadSignature(
-        "empfaengerSignatur"
-    );
+    document.getElementById(
+        "adblue"
+    ).checked =
+        daten.adblue || false;
+
+
+    document.getElementById(
+        "fett"
+    ).checked =
+        daten.fett || false;
+
+
+    document.getElementById(
+        "wasser"
+    ).checked =
+        daten.wasser || false;
+
+
+    document.getElementById(
+        "oel"
+    ).checked =
+        daten.oel || false;
+
+
+    document.getElementById(
+        "sonstiges"
+    ).checked =
+        daten.sonstiges || false;
+
+
+    document.getElementById(
+        "bemerkungen"
+    ).value =
+        daten.bemerkungen || "";
 
 }
-
 
 
 /* =========================================================
@@ -2124,6 +2281,9 @@ window.addEventListener(
             "empfaengerSignatur"
         );
 
+
+        loadFormular();
+
     }
 );
 
@@ -2131,4 +2291,5 @@ window.addEventListener(
 
 
 </body>
+
 </html>
