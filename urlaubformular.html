@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VE-LOG Urlaubsantrag</title>
+<title>VE-LOG Dashboard</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,360 +14,233 @@
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f3f3f3;
-    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#ececec;
+    padding:30px;
 }
 
-.formular{
-    max-width:1000px;
-    margin:auto;
+.card{
     background:#fff;
-    border:2px solid #333;
-    border-radius:8px;
+    border-radius:16px;
     padding:25px;
-    box-shadow:0 2px 12px rgba(0,0,0,.1);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    border-left:5px solid #8e2f2b;
 }
 
-.kopf{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.card-logo{
+    text-align:center;
     margin-bottom:20px;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#8e2f2b;
+.card-logo img{
+    width:150px;
+    height:auto;
 }
 
-.titel{
+.card h3{
+    text-align:center;
+    color:#17345d;
     font-size:30px;
-    font-weight:bold;
-}
-
-.linie{
-    border-top:4px solid #333;
-    margin:20px 0;
-}
-
-.abschnitt{
     margin-bottom:20px;
 }
 
-.abschnitt-titel{
-    background:#8e2f2b;
-    color:#fff;
-    padding:10px;
-    border-radius:5px;
-    margin-bottom:15px;
-    font-weight:bold;
-}
-
-.form-grid{
+.urlaub-stats{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.vollbreite{
-    grid-column:1/-1;
-}
-
-.feld{
-    display:flex;
-    flex-direction:column;
-}
-
-.feld label{
-    font-weight:bold;
-    margin-bottom:5px;
-}
-
-.feld input,
-.feld textarea{
-    padding:10px;
-    border:1px solid #999;
-    border-radius:4px;
-}
-
-.feld textarea{
-    min-height:100px;
-}
-
-.button-bereich{
-    display:flex;
-    flex-wrap:wrap;
+    grid-template-columns:repeat(5,1fr);
     gap:12px;
-    margin-top:25px;
-    padding-top:20px;
-    border-top:2px solid #ddd;
+    margin-bottom:25px;
 }
 
-.button-bereich button{
-    border:none;
-    border-radius:5px;
-    padding:12px 20px;
-    font-size:15px;
-    font-weight:bold;
-    color:#fff;
-    cursor:pointer;
-}
-
-.btn-zurueck{background:#6c757d;}
-.btn-dashboard{background:#198754;}
-.btn-speichern{background:#8e2f2b;}
-.btn-drucken{background:#444;}
-.btn-pdf{background:#1f4e79;}
-.btn-loeschen{background:#777;}
-
-.button-bereich button:hover{
-    opacity:.9;
-}
-
-.hinweis{
-    margin-top:20px;
-    padding:12px;
+.stat-card{
     background:#f5f5f5;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
     border-left:4px solid #8e2f2b;
 }
 
-@media(max-width:768px){
+.stat-number{
+    display:block;
+    font-size:28px;
+    font-weight:bold;
+    color:#17345d;
+}
 
-    .kopf{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
+.stat-label{
+    display:block;
+    margin-top:5px;
+    color:#666;
+    font-size:13px;
+}
 
-    .form-grid{
+/* =========================
+   URLAUB FORMULAR BUTTON
+========================= */
+
+.urlaub-btn{
+    width:100%;
+    background:#8e2f2b;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.urlaub-btn:hover{
+    background:#742421;
+}
+
+/* =========================
+   ZURÜCK BUTTON
+========================= */
+
+.zurueck-btn{
+    width:100%;
+    background:#17345d;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.zurueck-btn:hover{
+    background:#102846;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .urlaub-stats{
         grid-template-columns:1fr;
     }
 
-    .button-bereich{
-        flex-direction:column;
-    }
-
-    .button-bereich button{
-        width:100%;
-    }
 }
 
-@media print{
-
-    .button-bereich,
-    .hinweis{
-        display:none;
-    }
+@media(max-width:600px){
 
     body{
-        background:white;
-        padding:0;
+        padding:15px;
     }
 
-    .formular{
-        border:none;
-        box-shadow:none;
+    .card{
+        padding:20px;
     }
+
+    .card h3{
+        font-size:26px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="formular">
+<div class="card">
 
-    <div class="kopf">
-        <div class="logo">VE-LOG GmbH</div>
-        <div class="titel">URLAUBSANTRAG</div>
+    <!-- LOGO -->
+    <div class="card-logo">
+        <img src="logo.png" alt="VE-LOG Logo">
     </div>
 
-    <div class="linie"></div>
+    <!-- TITEL -->
+    <h3>📅 Urlaub</h3>
 
-    <div class="abschnitt">
-        <div class="abschnitt-titel">
-            Mitarbeiterdaten
+    <!-- URLAUBSSTATISTIK -->
+    <div class="urlaub-stats">
+
+        <div class="stat-card">
+            <span class="stat-number" id="urlaubstage">30</span>
+            <span class="stat-label">Urlaubstage</span>
         </div>
 
-        <div class="form-grid">
-
-            <div class="feld">
-                <label>Nachname</label>
-                <input type="text" id="name">
-            </div>
-
-            <div class="feld">
-                <label>Vorname</label>
-                <input type="text" id="vorname">
-            </div>
-
-            <div class="feld">
-                <label>Abteilung</label>
-                <input type="text" id="abteilung">
-            </div>
-
-            <div class="feld">
-                <label>Antragsdatum</label>
-                <input type="date" id="datum">
-            </div>
-
-        </div>
-    </div>
-
-    <div class="abschnitt">
-        <div class="abschnitt-titel">
-            Urlaubsdaten
+        <div class="stat-card">
+            <span class="stat-number" id="genommen">12</span>
+            <span class="stat-label">Genommen</span>
         </div>
 
-        <div class="form-grid">
-
-            <div class="feld">
-                <label>Urlaub von</label>
-                <input type="date" id="von">
-            </div>
-
-            <div class="feld">
-                <label>Urlaub bis</label>
-                <input type="date" id="bis">
-            </div>
-
-            <div class="feld">
-                <label>Anzahl Urlaubstage</label>
-                <input type="number" id="tage">
-            </div>
-
-            <div class="feld vollbreite">
-                <label>Bemerkung</label>
-                <textarea id="bemerkung"></textarea>
-            </div>
-
+        <div class="stat-card">
+            <span class="stat-number" id="verfuegbar">18</span>
+            <span class="stat-label">Verfügbar</span>
         </div>
-    </div>
 
-    <div class="button-bereich">
+        <div class="stat-card">
+            <span class="stat-number" id="offen">2</span>
+            <span class="stat-label">Offen</span>
+        </div>
 
-        <button
-            type="button"
-            class="btn-zurueck"
-            onclick="history.back()">
-            ↩️ Zurück
-        </button>
-
-        <button
-            type="button"
-            class="btn-dashboard"
-            onclick="window.location.href='dashboard.html'">
-            🏠 Dashboard
-        </button>
-
-        <button
-            type="button"
-            class="btn-speichern"
-            onclick="speichernFormular()">
-            💾 Speichern
-        </button>
-
-        <button
-            type="button"
-            class="btn-drucken"
-            onclick="window.print()">
-            🖨 Drucken
-        </button>
-
-        <button
-            type="button"
-            class="btn-pdf"
-            onclick="window.print()">
-            📄 Als PDF speichern
-        </button>
-
-        <button
-            type="button"
-            class="btn-loeschen"
-            onclick="formularLeeren()">
-            🗑 Formular leeren
-        </button>
+        <div class="stat-card">
+            <span class="stat-number" id="genehmigt">5</span>
+            <span class="stat-label">Genehmigt</span>
+        </div>
 
     </div>
 
-    <div class="hinweis">
-        Hinweis: Die Eingaben werden lokal im Browser gespeichert.
-    </div>
+
+    <!-- URLAUBSFORMULAR ÖFFNEN -->
+
+    <button
+        class="urlaub-btn"
+        onclick="window.location.href='urlaubformular.html'">
+
+        📄 Urlaubformular öffnen
+
+    </button>
+
+
+    <!-- ZURÜCK ZUM DASHBOARD -->
+
+    <button
+        class="zurueck-btn"
+        onclick="window.location.href='dashboard.html'">
+
+        ← Zurück zum Dashboard
+
+    </button>
 
 </div>
 
+
 <script>
 
-function speichernFormular(){
-
-    const daten = {
-        name: document.getElementById("name").value,
-        vorname: document.getElementById("vorname").value,
-        abteilung: document.getElementById("abteilung").value,
-        datum: document.getElementById("datum").value,
-        von: document.getElementById("von").value,
-        bis: document.getElementById("bis").value,
-        tage: document.getElementById("tage").value,
-        bemerkung: document.getElementById("bemerkung").value
-    };
-
-    localStorage.setItem(
-        "urlaubAntrag",
-        JSON.stringify(daten)
-    );
-
-    alert("✅ Urlaubsantrag gespeichert.");
-}
-
-function ladeFormular(){
+function ladeUrlaubsdaten(){
 
     const daten =
         JSON.parse(
-            localStorage.getItem("urlaubAntrag")
+            localStorage.getItem("urlaubDaten")
         );
 
     if(!daten) return;
 
-    document.getElementById("name").value =
-        daten.name || "";
+    document.getElementById("urlaubstage").innerText =
+        daten.urlaubstage || 30;
 
-    document.getElementById("vorname").value =
-        daten.vorname || "";
+    document.getElementById("genommen").innerText =
+        daten.genommen || 0;
 
-    document.getElementById("abteilung").value =
-        daten.abteilung || "";
+    document.getElementById("verfuegbar").innerText =
+        daten.verfuegbar || 30;
 
-    document.getElementById("datum").value =
-        daten.datum || "";
+    document.getElementById("offen").innerText =
+        daten.offen || 0;
 
-    document.getElementById("von").value =
-        daten.von || "";
+    document.getElementById("genehmigt").innerText =
+        daten.genehmigt || 0;
 
-    document.getElementById("bis").value =
-        daten.bis || "";
-
-    document.getElementById("tage").value =
-        daten.tage || "";
-
-    document.getElementById("bemerkung").value =
-        daten.bemerkung || "";
 }
 
-function formularLeeren(){
-
-    if(!confirm(
-        "Möchten Sie wirklich alle Daten löschen?"
-    )) return;
-
-    document
-        .querySelectorAll("input, textarea")
-        .forEach(el => el.value = "");
-
-    localStorage.removeItem("urlaubAntrag");
-}
-
-window.onload = ladeFormular;
+ladeUrlaubsdaten();
 
 </script>
 
