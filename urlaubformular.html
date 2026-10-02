@@ -31,90 +31,57 @@ html{
 }
 
 body{
-
     font-family:Arial, Helvetica, sans-serif;
-
-    background:#f4f4f4;
-
+    background:#f3f3f3;
     color:#222;
-
-    padding:15px;
-
+    padding:20px;
 }
 
 
 /* =========================================================
-   FORMULAR
+   HAUPT-FORMULAR
 ========================================================= */
 
 .formular{
-
     width:100%;
-
-    max-width:900px;
-
+    max-width:1000px;
     margin:0 auto;
-
-    background:#fff;
-
-    border-radius:15px;
-
-    padding:28px;
-
-    box-shadow:
-        0 2px 12px rgba(0,0,0,0.12);
-
+    background:white;
+    border:2px solid #333;
+    border-radius:8px;
+    padding:25px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.10);
 }
 
 
 /* =========================================================
-   OBERE NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 .top-buttons{
-
     display:flex;
-
     gap:10px;
-
     margin-bottom:20px;
-
 }
 
 .top-button{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     text-decoration:none;
-
     background:#8e2f2b;
-
     color:white;
-
     border:none;
-
     border-radius:6px;
-
     padding:10px 18px;
-
     min-height:42px;
-
     font-size:14px;
-
     font-weight:bold;
-
     cursor:pointer;
-
 }
 
 .top-button:hover{
-
     background:#742522;
-
 }
 
 
@@ -123,59 +90,35 @@ body{
 ========================================================= */
 
 .kopf{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-start;
-
     gap:30px;
-
-    margin-bottom:20px;
-
 }
 
 .titel{
-
-    color:#18395b;
-
-    font-size:24px;
-
+    font-size:30px;
     font-weight:bold;
-
+    color:#333;
     margin-top:5px;
-
 }
 
 .logo{
-
     text-align:right;
-
     flex-shrink:0;
-
 }
 
 .logo-img{
-
-    width:190px;
-
+    width:230px;
     max-width:100%;
-
     height:auto;
-
 }
 
 .logo p{
-
-    margin-top:6px;
-
+    margin-top:8px;
     font-size:11px;
-
-    line-height:1.4;
-
+    line-height:1.5;
     color:#444;
-
 }
 
 
@@ -184,11 +127,8 @@ body{
 ========================================================= */
 
 .linie{
-
-    border-top:1px solid #aaa;
-
-    margin:15px 0 22px 0;
-
+    border-top:3px solid #333;
+    margin:22px 0;
 }
 
 
@@ -197,72 +137,40 @@ body{
 ========================================================= */
 
 .form-grid{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
-    column-gap:35px;
-
-    row-gap:14px;
-
+    gap:20px 30px;
 }
 
 .feld{
-
     width:100%;
-
 }
 
 .feld label{
-
     display:block;
-
-    color:#18395b;
-
-    font-size:13px;
-
     font-weight:bold;
-
-    margin-bottom:5px;
-
+    color:#18395b;
+    font-size:13px;
+    margin-bottom:6px;
 }
 
 .feld input{
-
     width:100%;
-
-    height:36px;
-
+    height:38px;
     border:none;
-
-    border-bottom:1px solid #999;
-
-    padding:5px 7px;
-
+    border-bottom:1px solid #555;
+    padding:7px;
     font-size:15px;
-
     outline:none;
-
-    background:transparent;
-
+    background:white;
 }
 
 .feld input:focus{
-
     border-bottom:2px solid #8e2f2b;
-
 }
 
-
-/* =========================================================
-   VOLLES FELD
-========================================================= */
-
 .voll{
-
     grid-column:1/-1;
-
 }
 
 
@@ -271,61 +179,37 @@ body{
 ========================================================= */
 
 .urlaub-art{
-
-    margin-top:20px;
-
+    margin-top:25px;
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
+    gap:30px;
 }
 
 .urlaub-art-title{
-
     color:#18395b;
-
     font-size:13px;
-
     font-weight:bold;
-
-    margin-bottom:8px;
-
+    margin-bottom:10px;
 }
 
 .radio-gruppe{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:8px;
-
+    gap:9px;
 }
 
 .radio-gruppe label{
-
     display:flex;
-
     align-items:center;
-
-    gap:7px;
-
-    font-size:13px;
-
+    gap:8px;
+    font-size:14px;
     cursor:pointer;
-
 }
 
 .radio-gruppe input{
-
-    width:16px;
-
-    height:16px;
-
+    width:17px;
+    height:17px;
     accent-color:#8e2f2b;
-
 }
 
 
@@ -334,93 +218,47 @@ body{
 ========================================================= */
 
 .vertretung{
-
-    margin-top:22px;
-
+    margin-top:25px;
 }
 
 .vertretung label{
-
     display:block;
-
     color:#18395b;
-
     font-size:13px;
-
     font-weight:bold;
-
-    margin-bottom:5px;
-
+    margin-bottom:6px;
 }
 
 .vertretung textarea{
-
     width:100%;
-
-    min-height:75px;
-
-    border:none;
-
-    border-bottom:1px solid #999;
-
-    padding:8px 5px;
-
+    min-height:80px;
+    border:1px solid #aaa;
+    border-radius:5px;
+    padding:10px;
     font-family:Arial,sans-serif;
-
     font-size:14px;
-
     resize:vertical;
-
     outline:none;
-
 }
 
 .vertretung textarea:focus{
-
-    border-bottom:2px solid #8e2f2b;
-
+    border:2px solid #8e2f2b;
 }
 
 
 /* =========================================================
-   UNTERSCHRIFT ANTRAGSTELLER
-========================================================= */
-
-.antragsteller-bereich{
-
-    margin-top:25px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:30px;
-
-}
-
-
-/* =========================================================
-   ABSCHNITT ÜBERSCHRIFT
+   ABSCHNITT
 ========================================================= */
 
 .abschnitt{
-
     margin-top:35px;
-
-    margin-bottom:18px;
-
-    padding:10px 12px;
-
+    margin-bottom:20px;
     background:#8e2f2b;
-
     color:white;
-
-    border-radius:6px;
-
-    font-size:16px;
-
+    padding:11px 15px;
+    border-radius:5px;
+    font-size:17px;
     font-weight:bold;
-
 }
 
 
@@ -429,131 +267,86 @@ body{
 ========================================================= */
 
 .genehmigung{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:25px;
-
 }
 
 .genehmigung-box{
-
-    border:1px solid #ccc;
-
+    border:1px solid #bbb;
     border-radius:7px;
-
-    padding:15px;
-
+    padding:18px;
 }
 
 .genehmigung-box h3{
-
     color:#18395b;
-
     font-size:14px;
-
-    margin-bottom:12px;
-
+    margin-bottom:13px;
 }
 
 .check-gruppe{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:9px;
-
+    gap:10px;
 }
 
 .check-gruppe label{
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
-    font-size:13px;
-
+    font-size:14px;
     cursor:pointer;
-
 }
 
 .check-gruppe input{
-
-    width:16px;
-
-    height:16px;
-
+    width:17px;
+    height:17px;
     accent-color:#8e2f2b;
-
 }
 
 
 /* =========================================================
-   GENEHMIGTE URLAUBSDATEN
+   GENEHMIGTE DATEN
 ========================================================= */
 
 .genehmigte-daten{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
-    gap:25px;
-
-    margin-top:20px;
-
+    gap:20px 30px;
+    margin-top:25px;
 }
 
 
 /* =========================================================
-   BEGRÜNDUNG
+   BEMERKUNGEN
 ========================================================= */
 
 .begruendung{
-
-    margin-top:22px;
-
+    margin-top:25px;
 }
 
 .begruendung label{
-
     display:block;
-
     color:#18395b;
-
     font-size:13px;
-
     font-weight:bold;
-
-    margin-bottom:5px;
-
+    margin-bottom:6px;
 }
 
 .begruendung textarea{
-
     width:100%;
-
-    min-height:80px;
-
-    border:none;
-
-    border-bottom:1px solid #999;
-
-    padding:8px 5px;
-
+    min-height:90px;
+    border:1px solid #aaa;
+    border-radius:5px;
+    padding:10px;
     font-family:Arial,sans-serif;
-
     font-size:14px;
-
     resize:vertical;
-
     outline:none;
+}
 
+.begruendung textarea:focus{
+    border:2px solid #8e2f2b;
 }
 
 
@@ -562,131 +355,93 @@ body{
 ========================================================= */
 
 .signaturen{
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:30px;
-
-    margin-top:28px;
-
+    margin-top:30px;
 }
 
 .signature-box{
-
     width:100%;
-
 }
 
 .signature-title{
-
     color:#18395b;
-
-    font-size:13px;
-
+    font-size:14px;
     font-weight:bold;
-
-    margin-bottom:7px;
-
+    margin-bottom:8px;
 }
 
 .signature-pad{
-
     display:block;
-
     width:100%;
-
-    height:140px;
-
-    border:1px solid #bbb;
-
+    height:150px;
+    border:2px solid #555;
     border-radius:6px;
-
-    background:#fff;
-
+    background:white;
     touch-action:none;
-
     cursor:crosshair;
-
 }
 
+.signature-pad:hover{
+    border-color:#8e2f2b;
+}
+
+
+/* =========================================================
+   SIGNATUR BUTTONS
+========================================================= */
+
 .signature-buttons{
-
     display:flex;
-
-    gap:7px;
-
     flex-wrap:wrap;
-
+    gap:8px;
     margin-top:8px;
-
 }
 
 .signature-button{
-
     border:none;
-
     border-radius:5px;
-
-    padding:8px 11px;
-
-    min-height:35px;
-
+    padding:8px 12px;
+    min-height:36px;
     color:white;
-
     font-size:11px;
-
     font-weight:bold;
-
     cursor:pointer;
-
-}
-
-.signature-delete{
-
-    background:#777;
-
-}
-
-.signature-upload{
-
-    background:#444;
-
-}
-
-.signature-png{
-
-    background:#1f4e79;
-
 }
 
 .signature-button:hover{
-
     opacity:.9;
+}
 
+.signature-delete{
+    background:#777;
+}
+
+.signature-upload{
+    background:#444;
+}
+
+.signature-png{
+    background:#1f4e79;
 }
 
 .file-input{
-
     display:none;
-
 }
 
+
+/* =========================================================
+   UNTERSCHRIFT-TEXT
+========================================================= */
+
 .sign-text{
-
     margin-top:8px;
-
-    padding-top:6px;
-
+    padding-top:7px;
     border-top:1px solid #999;
-
     font-size:11px;
-
     font-weight:bold;
-
     color:#444;
-
 }
 
 
@@ -695,69 +450,43 @@ body{
 ========================================================= */
 
 .buttons{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:10px;
-
     margin-top:30px;
-
     padding-top:20px;
-
     border-top:1px solid #ddd;
-
 }
 
 .buttons button{
-
     border:none;
-
     border-radius:6px;
-
-    padding:11px 18px;
-
+    padding:12px 20px;
     min-height:44px;
-
     color:white;
-
     font-size:14px;
-
     font-weight:bold;
-
     cursor:pointer;
-
-}
-
-.speichern{
-
-    background:#8e2f2b;
-
-}
-
-.pdf{
-
-    background:#1f4e79;
-
-}
-
-.drucken{
-
-    background:#444;
-
-}
-
-.loeschen{
-
-    background:#777;
-
 }
 
 .buttons button:hover{
-
     opacity:.9;
+}
 
+.speichern{
+    background:#8e2f2b;
+}
+
+.pdf{
+    background:#1f4e79;
+}
+
+.drucken{
+    background:#444;
+}
+
+.loeschen{
+    background:#777;
 }
 
 
@@ -768,27 +497,23 @@ body{
 @media(max-width:800px){
 
     body{
-
         padding:10px;
-
     }
 
     .formular{
-
-        padding:22px;
-
+        padding:20px;
     }
 
     .kopf{
-
         gap:20px;
-
     }
 
     .logo-img{
+        width:180px;
+    }
 
-        width:160px;
-
+    .titel{
+        font-size:26px;
     }
 
 }
@@ -801,171 +526,104 @@ body{
 @media(max-width:600px){
 
     body{
-
         padding:0;
-
-        background:#fff;
-
+        background:white;
     }
 
     .formular{
-
         width:100%;
-
         min-height:100vh;
-
         margin:0;
-
         padding:15px;
-
+        border:none;
         border-radius:0;
-
         box-shadow:none;
-
     }
 
     .top-buttons{
-
         width:100%;
-
     }
 
     .top-button{
-
         flex:1;
-
-        font-size:13px;
-
-        padding:9px 7px;
-
+        padding:9px 5px;
+        font-size:12px;
     }
 
     .kopf{
-
         flex-direction:column;
-
         gap:15px;
-
     }
 
     .logo{
-
-        order:-1;
-
         width:100%;
-
         text-align:center;
-
+        order:-1;
     }
 
     .logo-img{
-
-        width:180px;
-
-        margin:auto;
-
+        width:190px;
     }
 
     .logo p{
-
         text-align:center;
-
     }
 
     .titel{
-
-        font-size:21px;
-
+        font-size:23px;
     }
 
     .form-grid{
-
         grid-template-columns:1fr;
-
-        gap:14px;
-
+        gap:15px;
     }
 
     .voll{
-
         grid-column:auto;
-
     }
 
     .urlaub-art{
-
         grid-template-columns:1fr;
-
-    }
-
-    .antragsteller-bereich{
-
-        grid-template-columns:1fr;
-
         gap:15px;
-
     }
 
     .genehmigung{
-
         grid-template-columns:1fr;
-
     }
 
     .genehmigte-daten{
-
         grid-template-columns:1fr;
-
     }
 
     .signaturen{
-
         grid-template-columns:1fr;
-
-        gap:25px;
-
+        gap:28px;
     }
 
     .signature-pad{
-
-        height:180px;
-
+        height:190px;
     }
 
     .signature-buttons{
-
         display:grid;
-
         grid-template-columns:1fr;
-
     }
 
     .signature-button{
-
         width:100%;
-
-        min-height:40px;
-
+        min-height:42px;
         font-size:13px;
-
     }
 
     .buttons{
-
         display:grid;
-
         grid-template-columns:1fr;
-
     }
 
     .buttons button{
-
         width:100%;
-
-        min-height:48px;
-
+        min-height:50px;
         font-size:15px;
-
     }
 
 }
@@ -978,57 +636,38 @@ body{
 @media print{
 
     @page{
-
         size:A4;
-
         margin:12mm;
-
     }
 
     body{
-
         padding:0;
-
         background:white;
-
     }
 
     .formular{
-
         width:100%;
-
         max-width:none;
-
         padding:0;
-
         margin:0;
-
+        border:none;
         border-radius:0;
-
         box-shadow:none;
-
     }
 
     .top-buttons,
     .buttons,
     .signature-buttons{
-
         display:none !important;
-
     }
 
     .abschnitt{
-
         -webkit-print-color-adjust:exact;
-
         print-color-adjust:exact;
-
     }
 
     .signature-pad{
-
         height:130px;
-
     }
 
 }
@@ -1054,10 +693,10 @@ body{
 <div class="top-buttons">
 
     <a
-        href="urlaub.html"
+        href="formular.html"
         class="top-button"
     >
-        🗓️ Urlaub
+        📄 Formular
     </a>
 
     <a
@@ -1096,13 +735,9 @@ body{
         >
 
         <p>
-
             Flächenmanagement · Umschlag · Transport<br>
-
             Sperberweg 15 · 91056 Erlangen<br>
-
             Tel. 09131 / 7515-10
-
         </p>
 
     </div>
@@ -1117,7 +752,7 @@ body{
 
 
 <!-- =====================================================
-     MITARBEITERDATEN
+     MITARBEITER
 ===================================================== -->
 
 <div class="form-grid">
@@ -1175,7 +810,7 @@ body{
 
 <div
     class="form-grid"
-    style="margin-top:22px;"
+    style="margin-top:25px;"
 >
 
 
@@ -1304,6 +939,7 @@ body{
 
     <textarea
         id="vertretung"
+        placeholder="Hier kann die Vertretung eingetragen werden..."
     ></textarea>
 
 </div>
@@ -1313,6 +949,13 @@ body{
 <!-- =====================================================
      ANTRAGSTELLER
 ===================================================== -->
+
+<div class="abschnitt">
+
+    Antragsteller
+
+</div>
+
 
 <div class="antragsteller-bereich">
 
@@ -1331,21 +974,12 @@ body{
     </div>
 
 
-    <div class="feld">
-
-        <label>
-            Unterschrift Antragsteller
-        </label>
-
-    </div>
-
-
 </div>
 
 
 
 <!-- =====================================================
-     DIGITALE UNTERSCHRIFT ANTRAGSTELLER
+     UNTERSCHRIFT ANTRAGSTELLER
 ===================================================== -->
 
 <div
@@ -1357,7 +991,9 @@ body{
     <div class="signature-box">
 
         <div class="signature-title">
-            Digitale Unterschrift Antragsteller
+
+            Unterschrift Antragsteller
+
         </div>
 
 
@@ -1368,6 +1004,7 @@ body{
 
 
         <div class="signature-buttons">
+
 
             <button
                 type="button"
@@ -1383,7 +1020,7 @@ body{
                 class="signature-button signature-upload"
                 onclick="uploadSignature('signatureAntragsteller')"
             >
-                📁 Hochladen
+                📁 Unterschrift hochladen
             </button>
 
 
@@ -1392,8 +1029,9 @@ body{
                 class="signature-button signature-png"
                 onclick="saveSignaturePNG('signatureAntragsteller')"
             >
-                💾 Als PNG
+                💾 Als PNG speichern
             </button>
+
 
         </div>
 
@@ -1403,13 +1041,19 @@ body{
             id="upload-signatureAntragsteller"
             class="file-input"
             accept="image/png,image/jpeg,image/jpg"
-            onchange="loadSignature(this,'signatureAntragsteller')"
+            onchange="loadSignature(
+                this,
+                'signatureAntragsteller'
+            )"
         >
 
 
         <div class="sign-text">
+
             UNTERSCHRIFT ANTRAGSTELLER
+
         </div>
+
 
     </div>
 
@@ -1446,6 +1090,7 @@ body{
 
         <div class="check-gruppe">
 
+
             <label>
 
                 <input
@@ -1471,6 +1116,7 @@ body{
 
             </label>
 
+
         </div>
 
     </div>
@@ -1485,6 +1131,7 @@ body{
 
 
         <div class="check-gruppe">
+
 
             <label>
 
@@ -1510,6 +1157,7 @@ body{
                 mit folgender Änderung
 
             </label>
+
 
         </div>
 
@@ -1572,7 +1220,7 @@ body{
 
 
     <!-- =================================================
-         DIESES FELD IST JETZT FREI BESCHREIBBAR
+         FREI BESCHREIBBARES TAGE-FELD
     ================================================== -->
 
     <div class="feld">
@@ -1595,7 +1243,7 @@ body{
 
 
 <!-- =====================================================
-     BEGRÜNDUNG
+     BEMERKUNG
 ===================================================== -->
 
 <div class="begruendung">
@@ -1606,6 +1254,7 @@ body{
 
     <textarea
         id="genehmigungsBemerkung"
+        placeholder="Hier können Bemerkungen eingetragen werden..."
     ></textarea>
 
 </div>
@@ -1616,7 +1265,10 @@ body{
      ABTEILUNGSLEITER
 ===================================================== -->
 
-<div class="signaturen">
+<div
+    class="genehmigte-daten"
+    style="margin-top:25px;"
+>
 
 
     <div class="feld">
@@ -1633,10 +1285,23 @@ body{
     </div>
 
 
+</div>
+
+
+
+<!-- =====================================================
+     UNTERSCHRIFT ABTEILUNGSLEITER
+===================================================== -->
+
+<div class="signaturen">
+
+
     <div class="signature-box">
 
         <div class="signature-title">
+
             Unterschrift Abteilungsleiter
+
         </div>
 
 
@@ -1647,6 +1312,7 @@ body{
 
 
         <div class="signature-buttons">
+
 
             <button
                 type="button"
@@ -1662,7 +1328,7 @@ body{
                 class="signature-button signature-upload"
                 onclick="uploadSignature('signatureLeiter')"
             >
-                📁 Hochladen
+                📁 Unterschrift hochladen
             </button>
 
 
@@ -1671,8 +1337,9 @@ body{
                 class="signature-button signature-png"
                 onclick="saveSignaturePNG('signatureLeiter')"
             >
-                💾 Als PNG
+                💾 Als PNG speichern
             </button>
+
 
         </div>
 
@@ -1682,13 +1349,19 @@ body{
             id="upload-signatureLeiter"
             class="file-input"
             accept="image/png,image/jpeg,image/jpg"
-            onchange="loadSignature(this,'signatureLeiter')"
+            onchange="loadSignature(
+                this,
+                'signatureLeiter'
+            )"
         >
 
 
         <div class="sign-text">
+
             UNTERSCHRIFT ABTEILUNGSLEITER
+
         </div>
+
 
     </div>
 
@@ -1709,7 +1382,9 @@ body{
         class="speichern"
         onclick="speichernFormular()"
     >
+
         💾 Speichern
+
     </button>
 
 
@@ -1718,7 +1393,9 @@ body{
         class="pdf"
         onclick="window.print()"
     >
+
         📄 Als PDF speichern
+
     </button>
 
 
@@ -1727,7 +1404,9 @@ body{
         class="drucken"
         onclick="window.print()"
     >
+
         🖨 Drucken
+
     </button>
 
 
@@ -1736,11 +1415,14 @@ body{
         class="loeschen"
         onclick="clearAllSignatures()"
     >
+
         🗑 Unterschriften löschen
+
     </button>
 
 
 </div>
+
 
 
 </div>
@@ -1750,14 +1432,14 @@ body{
 <script>
 
 /* =========================================================
-   SIGNATURE SYSTEM
+   SIGNATUR-PADS
 ========================================================= */
 
 const pads = {};
 
 
 /* =========================================================
-   CANVAS ERSTELLEN
+   SIGNATUR-CANVAS ERSTELLEN
 ========================================================= */
 
 function createPad(id){
@@ -1765,7 +1447,11 @@ function createPad(id){
     const canvas =
         document.getElementById(id);
 
-    if(!canvas) return;
+    if(!canvas){
+
+        return;
+
+    }
 
 
     const ctx =
@@ -1780,12 +1466,14 @@ function createPad(id){
         const rect =
             canvas.getBoundingClientRect();
 
+
         const ratio =
             window.devicePixelRatio || 1;
 
 
         canvas.width =
             rect.width * ratio;
+
 
         canvas.height =
             rect.height * ratio;
@@ -1848,6 +1536,7 @@ function createPad(id){
 
             e.preventDefault();
 
+
             canvas.setPointerCapture(
                 e.pointerId
             );
@@ -1859,7 +1548,9 @@ function createPad(id){
 
             drawing = true;
 
+
             ctx.beginPath();
+
 
             ctx.moveTo(
                 pos.x,
@@ -1874,7 +1565,12 @@ function createPad(id){
         "pointermove",
         function(e){
 
-            if(!drawing) return;
+            if(!drawing){
+
+                return;
+
+            }
+
 
             e.preventDefault();
 
@@ -1887,6 +1583,7 @@ function createPad(id){
                 pos.x,
                 pos.y
             );
+
 
             ctx.stroke();
 
@@ -1926,7 +1623,7 @@ function createPad(id){
 
 
 /* =========================================================
-   UNTERSCHRIFT LÖSCHEN
+   SIGNATUR LÖSCHEN
 ========================================================= */
 
 function clearCanvas(id){
@@ -1934,7 +1631,12 @@ function clearCanvas(id){
     const pad =
         pads[id];
 
-    if(!pad) return;
+
+    if(!pad){
+
+        return;
+
+    }
 
 
     pad.ctx.clearRect(
@@ -1950,7 +1652,7 @@ function clearCanvas(id){
 
 
 /* =========================================================
-   ALLE UNTERSCHRIFTEN LÖSCHEN
+   ALLE SIGNATUREN LÖSCHEN
 ========================================================= */
 
 function clearAllSignatures(){
@@ -1958,6 +1660,7 @@ function clearAllSignatures(){
     clearCanvas(
         "signatureAntragsteller"
     );
+
 
     clearCanvas(
         "signatureLeiter"
@@ -1967,7 +1670,7 @@ function clearAllSignatures(){
 
 
 /* =========================================================
-   BILD HOCHLADEN
+   SIGNATUR HOCHLADEN
 ========================================================= */
 
 function uploadSignature(id){
@@ -1976,6 +1679,7 @@ function uploadSignature(id){
         document.getElementById(
             "upload-" + id
         );
+
 
     if(input){
 
@@ -1987,7 +1691,7 @@ function uploadSignature(id){
 
 
 /* =========================================================
-   HOCHGELADENE UNTERSCHRIFT ANZEIGEN
+   HOCHGELADENE SIGNATUR LADEN
 ========================================================= */
 
 function loadSignature(input,id){
@@ -1995,7 +1699,12 @@ function loadSignature(input,id){
     const file =
         input.files[0];
 
-    if(!file) return;
+
+    if(!file){
+
+        return;
+
+    }
 
 
     const reader =
@@ -2015,7 +1724,12 @@ function loadSignature(input,id){
                     const pad =
                         pads[id];
 
-                    if(!pad) return;
+
+                    if(!pad){
+
+                        return;
+
+                    }
 
 
                     const canvas =
@@ -2092,7 +1806,7 @@ function loadSignature(input,id){
 
 
 /* =========================================================
-   PNG SPEICHERN
+   SIGNATUR ALS PNG SPEICHERN
 ========================================================= */
 
 function saveSignaturePNG(id){
@@ -2100,7 +1814,12 @@ function saveSignaturePNG(id){
     const pad =
         pads[id];
 
-    if(!pad) return;
+
+    if(!pad){
+
+        return;
+
+    }
 
 
     const link =
@@ -2123,7 +1842,7 @@ function saveSignaturePNG(id){
 
 
 /* =========================================================
-   SIGNATUR DATA
+   SIGNATUR ALS DATA URL
 ========================================================= */
 
 function getSignature(id){
@@ -2131,7 +1850,13 @@ function getSignature(id){
     const pad =
         pads[id];
 
-    if(!pad) return "";
+
+    if(!pad){
+
+        return "";
+
+    }
+
 
     return pad.canvas.toDataURL(
         "image/png"
@@ -2148,107 +1873,129 @@ function speichernFormular(){
 
     const daten = {
 
+
         name:
             document.getElementById(
                 "name"
             ).value,
+
 
         vorname:
             document.getElementById(
                 "vorname"
             ).value,
 
+
         firma:
             document.getElementById(
                 "firma"
             ).value,
+
 
         urlaubVon:
             document.getElementById(
                 "urlaubVon"
             ).value,
 
+
         urlaubBis:
             document.getElementById(
                 "urlaubBis"
             ).value,
+
 
         urlaubTage:
             document.getElementById(
                 "urlaubTage"
             ).value,
 
+
         tageText:
             document.getElementById(
                 "tageText"
             ).value,
+
 
         urlaubArt:
             document.querySelector(
                 'input[name="urlaubArt"]:checked'
             )?.value || "",
 
+
         vertretung:
             document.getElementById(
                 "vertretung"
             ).value,
+
 
         datumAntrag:
             document.getElementById(
                 "datumAntrag"
             ).value,
 
+
         genehmigung:
             document.querySelector(
                 'input[name="genehmigung"]:checked'
             )?.value || "",
+
 
         genehmigungsart:
             document.querySelector(
                 'input[name="genehmigungsart"]:checked'
             )?.value || "",
 
+
         genehmigtVon:
             document.getElementById(
                 "genehmigtVon"
             ).value,
+
 
         genehmigtBis:
             document.getElementById(
                 "genehmigtBis"
             ).value,
 
+
         genehmigtTage:
             document.getElementById(
                 "genehmigtTage"
             ).value,
 
-        /* NEU: frei beschreibbares Tage-Feld */
+
+        /* WICHTIG:
+           Dieses Feld ist frei beschreibbar */
 
         genehmigtTageText:
             document.getElementById(
                 "genehmigtTageText"
             ).value,
 
+
         genehmigungsBemerkung:
             document.getElementById(
                 "genehmigungsBemerkung"
             ).value,
+
 
         datumLeiter:
             document.getElementById(
                 "datumLeiter"
             ).value,
 
+
         signaturAntragsteller:
             getSignature(
                 "signatureAntragsteller"
             ),
 
+
         signaturLeiter:
             getSignature(
                 "signatureLeiter"
             ),
+
 
         gespeichertAm:
             new Date().toLocaleString(
@@ -2275,7 +2022,7 @@ function speichernFormular(){
 
 
 /* =========================================================
-   GESPEICHERTEN ANTRAG LADEN
+   FORMULAR LADEN
 ========================================================= */
 
 function ladeFormular(){
@@ -2286,7 +2033,11 @@ function ladeFormular(){
         );
 
 
-    if(!gespeichert) return;
+    if(!gespeichert){
+
+        return;
+
+    }
 
 
     try{
@@ -2394,6 +2145,7 @@ function ladeFormular(){
                     `input[name="urlaubArt"][value="${daten.urlaubArt}"]`
                 );
 
+
             if(radio){
 
                 radio.checked = true;
@@ -2409,6 +2161,7 @@ function ladeFormular(){
                 document.querySelector(
                     `input[name="genehmigung"][value="${daten.genehmigung}"]`
                 );
+
 
             if(radio){
 
@@ -2426,6 +2179,7 @@ function ladeFormular(){
                     `input[name="genehmigungsart"][value="${daten.genehmigungsart}"]`
                 );
 
+
             if(radio){
 
                 radio.checked = true;
@@ -2441,8 +2195,11 @@ function ladeFormular(){
         ){
 
             drawSavedSignature(
+
                 "signatureAntragsteller",
+
                 daten.signaturAntragsteller
+
             );
 
         }
@@ -2454,8 +2211,11 @@ function ladeFormular(){
         ){
 
             drawSavedSignature(
+
                 "signatureLeiter",
+
                 daten.signaturLeiter
+
             );
 
         }
@@ -2474,7 +2234,7 @@ function ladeFormular(){
 
 
 /* =========================================================
-   GESPEICHERTE SIGNATUR ZEIGEN
+   GESPEICHERTE SIGNATUR ZEICHNEN
 ========================================================= */
 
 function drawSavedSignature(
@@ -2485,7 +2245,12 @@ function drawSavedSignature(
     const pad =
         pads[id];
 
-    if(!pad) return;
+
+    if(!pad){
+
+        return;
+
+    }
 
 
     const img =
@@ -2571,6 +2336,7 @@ window.addEventListener(
     "load",
     function(){
 
+
         createPad(
             "signatureAntragsteller"
         );
@@ -2582,6 +2348,7 @@ window.addEventListener(
 
 
         ladeFormular();
+
 
     }
 );
