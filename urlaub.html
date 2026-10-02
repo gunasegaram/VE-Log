@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -1232,8 +1231,8 @@ body{
 
         <input
             type="text"
-            value="Arbeitstage"
-            readonly
+            id="tageText"
+            placeholder="Tage eingeben"
         >
 
     </div>
@@ -1337,8 +1336,6 @@ body{
         <label>
             Unterschrift Antragsteller
         </label>
-
-        <!-- wird unten digital unterschrieben -->
 
     </div>
 
@@ -1527,9 +1524,7 @@ body{
      GENEHMIGTER ZEITRAUM
 ===================================================== -->
 
-<div
-    class="genehmigte-daten"
->
+<div class="genehmigte-daten">
 
 
     <div class="feld">
@@ -1576,6 +1571,10 @@ body{
     </div>
 
 
+    <!-- =================================================
+         DIESES FELD IST JETZT FREI BESCHREIBBAR
+    ================================================== -->
+
     <div class="feld">
 
         <label>
@@ -1584,8 +1583,8 @@ body{
 
         <input
             type="text"
-            value="Arbeitstage"
-            readonly
+            id="genehmigtTageText"
+            placeholder="Tage eingeben"
         >
 
     </div>
@@ -1596,7 +1595,7 @@ body{
 
 
 <!-- =====================================================
-     ÄNDERUNG / BEGRÜNDUNG
+     BEGRÜNDUNG
 ===================================================== -->
 
 <div class="begruendung">
@@ -1617,9 +1616,7 @@ body{
      ABTEILUNGSLEITER
 ===================================================== -->
 
-<div
-    class="signaturen"
->
+<div class="signaturen">
 
 
     <div class="feld">
@@ -2181,6 +2178,11 @@ function speichernFormular(){
                 "urlaubTage"
             ).value,
 
+        tageText:
+            document.getElementById(
+                "tageText"
+            ).value,
+
         urlaubArt:
             document.querySelector(
                 'input[name="urlaubArt"]:checked'
@@ -2219,6 +2221,13 @@ function speichernFormular(){
         genehmigtTage:
             document.getElementById(
                 "genehmigtTage"
+            ).value,
+
+        /* NEU: frei beschreibbares Tage-Feld */
+
+        genehmigtTageText:
+            document.getElementById(
+                "genehmigtTageText"
             ).value,
 
         genehmigungsBemerkung:
@@ -2325,6 +2334,12 @@ function ladeFormular(){
 
 
         document.getElementById(
+            "tageText"
+        ).value =
+            daten.tageText || "";
+
+
+        document.getElementById(
             "vertretung"
         ).value =
             daten.vertretung || "";
@@ -2352,6 +2367,12 @@ function ladeFormular(){
             "genehmigtTage"
         ).value =
             daten.genehmigtTage || "";
+
+
+        document.getElementById(
+            "genehmigtTageText"
+        ).value =
+            daten.genehmigtTageText || "";
 
 
         document.getElementById(
