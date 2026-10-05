@@ -1,1 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>VE-LOG | Benutzerkonto</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+header{
+    background:#8e2f2b;
+    color:white;
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    height:70px;
+}
+
+.logo span{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.container{
+    padding:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.btn{
+    background:white;
+    color:#8e2f2b;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#ececec;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+    border-left:5px solid #8e2f2b;
+}
+
+.card h2{
+    color:#8e2f2b;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group select{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.full{
+    grid-column:1 / -1;
+}
+
+.btn-speichern{
+    background:#8e2f2b;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-speichern:hover{
+    opacity:0.9;
+}
+
+.info-box{
+    background:#fafafa;
+    border-radius:10px;
+    padding:15px;
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .logo{
+        flex-direction:column;
+    }
+
+    .container{
+        padding:15px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="logo.png" alt="VE-LOG Logo">
+        <span>Benutzerkonto</span>
+    </div>
+
+    <button
+        class="btn"
+        onclick="window.location.href='einstellungen.html'">
+        ← Einstellungen
+    </button>
+
+</header>
+
+<div class="container">
+
+    <!-- Persönliche Daten -->
+
+    <div class="card">
+
+        <h2>👤 Persönliche Daten</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Vorname</label>
+                <input type="text" id="vorname">
+            </div>
+
+            <div class="form-group">
+                <label>Nachname</label>
+                <input type="text" id="nachname">
+            </div>
+
+            <div class="form-group">
+                <label>E-Mail</label>
+                <input type="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label>Benutzername</label>
+                <input type="text" id="benutzername">
+            </div>
+
+            <div class="form-group full">
+                <button class="btn-speichern" onclick="speichernProfil()">
+                    💾 Profil speichern
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Passwort -->
+
+    <div class="card">
+
+        <h2>🔒 Passwort ändern</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Aktuelles Passwort</label>
+                <input type="password">
+            </div>
+
+            <div class="form-group">
+                <label>Neues Passwort</label>
+                <input type="password">
+            </div>
+
+            <div class="form-group full">
+                <label>Passwort bestätigen</label>
+                <input type="password">
+            </div>
+
+            <div class="form-group full">
+                <button class="btn-speichern">
+                    🔑 Passwort ändern
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Systemeinstellungen -->
+
+    <div class="card">
+
+        <h2>⚙️ Einstellungen</h2>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Sprache</label>
+                <select>
+                    <option>Deutsch</option>
+                    <option>English</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Design</label>
+                <select>
+                    <option>Hell</option>
+                    <option>Dunkel</option>
+                </select>
+            </div>
+
+            <div class="form-group full">
+                <button class="btn-speichern">
+                    ✅ Einstellungen speichern
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Kontoinformationen -->
+
+    <div class="card">
+
+        <h2>ℹ️ Kontoinformationen</h2>
+
+        <div class="info-box">
+            <strong>Letzte Anmeldung:</strong>
+            <span id="lastLogin">
+                Nicht verfügbar
+            </span>
+        </div>
+
+        <div class="info-box">
+            <strong>Benutzerrolle:</strong>
+            Administrator
+        </div>
+
+        <div class="info-box">
+            <strong>Status:</strong>
+            Aktiv
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function speichernProfil(){
+
+    const daten = {
+        vorname:
+            document.getElementById("vorname").value,
+
+        nachname:
+            document.getElementById("nachname").value,
+
+        email:
+            document.getElementById("email").value,
+
+        benutzername:
+            document.getElementById("benutzername").value
+    };
+
+    localStorage.setItem(
+        "profilDaten",
+        JSON.stringify(daten)
+    );
+
+    alert("Profil gespeichert.");
+}
+
+function ladeProfil(){
+
+    const daten =
+        JSON.parse(
+            localStorage.getItem("profilDaten")
+        );
+
+    if(!daten) return;
+
+    document.getElementById("vorname").value =
+        daten.vorname || "";
+
+    document.getElementById("nachname").value =
+        daten.nachname || "";
+
+    document.getElementById("email").value =
+        daten.email || "";
+
+    document.getElementById("benutzername").value =
+        daten.benutzername || "";
+}
+
+document.getElementById("lastLogin").innerText =
+    new Date().toLocaleString("de-DE");
+
+ladeProfil();
+
+</script>
+
+</body>
+</html>
