@@ -313,7 +313,8 @@ body {
     border-top: 2px solid #ddd;
 }
 
-.button-bereich button {
+.button-bereich button,
+.button-bereich a {
     border: none;
     border-radius: 5px;
     padding: 12px 20px;
@@ -321,6 +322,14 @@ body {
     font-weight: bold;
     color: white;
     cursor: pointer;
+}
+
+.btn-zurueck {
+    background: #18395b;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-speichern {
@@ -339,7 +348,8 @@ body {
     background: #777;
 }
 
-.button-bereich button:hover {
+.button-bereich button:hover,
+.button-bereich a:hover {
     opacity: 0.9;
 }
 
@@ -448,7 +458,8 @@ body {
         flex-direction: column;
     }
 
-    .button-bereich button {
+    .button-bereich button,
+.button-bereich a {
         width: 100%;
     }
 }
@@ -941,6 +952,11 @@ body {
     ========================== -->
 
     <div class="button-bereich">
+
+        <!-- Ziel bei Bedarf an den Dateinamen der Urlaubsseite anpassen. -->
+        <a class="btn-zurueck" href="urlaub.html">
+            ← Zurück zu Urlaub
+        </a>
 
         <button
             type="button"
