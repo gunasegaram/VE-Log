@@ -41,12 +41,31 @@ button{
     border-radius:8px;
     cursor:pointer;
     margin-top:10px;
+    font-size:15px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.back-btn{
+    background:#666;
+    margin-bottom:10px;
+}
+
+.back-btn:hover{
+    background:#555;
 }
 </style>
 </head>
 <body>
 
 <div class="box">
+
+    <button class="back-btn" onclick="window.location.href='index.html'">
+        ← Zurück zum Anmelden
+    </button>
+
     <h2>Registrierung</h2>
 
     <input id="vorname" type="text" placeholder="Vorname">
@@ -57,6 +76,7 @@ button{
     <input id="passwort2" type="password" placeholder="Passwort wiederholen">
 
     <button onclick="registrieren()">Registrieren</button>
+
 </div>
 
 <script type="module">
@@ -66,7 +86,7 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDXTAVTeddKxwOp_C_2Z4lPY9yI5bAm0KM",
+  apiKey: "DEIN_NEUER_API_KEY",
   authDomain: "ve-log.firebaseapp.com",
   databaseURL: "https://ve-log-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "ve-log",
